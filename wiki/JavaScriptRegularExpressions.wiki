@@ -44,8 +44,7 @@ test.replace(pattern, "<br />");
 
 {{{
 //urlify - turn URLs into HTML links
-var text = "Check the web site, http://www.oreilly.com/
-catalog/regexppr.";
+var text = "Check the web site, http://www.oreilly.com/catalog/regexppr.";
 var regex =
     "\\b"                                    // start at word boundary
   + "("                                      // capture to $1
