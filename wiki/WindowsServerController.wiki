@@ -31,3 +31,10 @@ NOTE: The option name includes the equal sign.
 }}}
 
 *每個參數的等號後面都要有個空格*
+
+== Examples ==
+
+{{{
+sc create "ssh-agent" binPath= "\"C:\Program Files\PuTTY\pageant.exe\" d:\ssh-keys\identity.ppk d:\ssh-keys\
+id-rsa.ppk d:\ssh-keys\id-dsa.ppk"
+}}}
