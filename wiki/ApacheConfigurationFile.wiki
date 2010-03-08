@@ -1,0 +1,51 @@
+#summary Apache Configuration Examples
+
+= Virtual Directory =
+
+{{{
+Alias /myproject1/ "D:/Workspace/GitRepositories/myproject1/"
+
+<Directory "D:/Workspace/GitRepositories/myproject1">
+    Options Indexes MultiViews FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+</Directory>
+}}}
+
+
+= CodeIgniter Rewrite Rule =
+
+{{{
+<Directory "D:/Workspace/GitRepositories/myproject2">
+    RewriteEngine on
+    RewriteCond $1 !^(index\.php|js|css|robots\.txt)
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</Directory>
+}}}
+
+= Virtual Host =
+
+== httpd.conf ==
+
+{{{
+# Dynamic Shared Object (DSO) Support
+LoadModule vhost_alias_module modules/mod_vhost_alias.so
+
+# Virtual hosts
+Include conf/extra/httpd-vhosts.conf
+}}}
+
+== httpd-vhosts.conf ==
+
+{{{
+NameVirtualHost *:8000
+
+<VirtualHost *:8000>
+    ServerAdmin admin@example.com
+    DocumentRoot "D:/Workspace/GitRepositories/myproject3"
+    ServerName myproject3.example.com
+    ErrorLog "logs/myproject3.example.com-error.log"
+    CustomLog "logs/myproject3.example.com-access.log" common
+</VirtualHost>
+}}}
