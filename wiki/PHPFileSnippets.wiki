@@ -14,7 +14,7 @@ function _prepare_dir($save_file) {
 }
 }}}
 
-= reading file line by line =
+= reading a file line by line =
 
 {{{
 $file = "test.txt";
