@@ -1,0 +1,4 @@
+#summary PHP Common Mistakes
+
+ * 當輸入 +1 和 1 表示不同值的時候，容易出錯
+ * date.timezone 沒有設定時，可能造成 date() 算錯
