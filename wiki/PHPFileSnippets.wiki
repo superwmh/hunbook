@@ -31,3 +31,39 @@ while ($line = fgets($fp, 10240)) {
 flock($fp, LOCK_UN);
 fclose($fp);
 }}}
+
+= load cache file =
+
+{{{
+<?php
+
+load_cache('test1');
+load_cache('test2');
+echo 'test1: ', $test1, "\n";
+echo 'test2: ', $test2, "\n";
+
+function load_cache($cache_file) {
+  $fullentry = dirname(__FILE__) .'/caches/'. $cache_file .'.php';
+  $regen = TRUE;
+  if (file_exists($fullentry)) {
+    $mtime = filemtime($fullentry);
+    if ($mtime > (time() - mt_rand(60, 90))) {
+      $regen = FALSE;
+    }
+  }
+
+  if ($regen) {
+    echo $cache_file, " regen!\n";
+    file_put_contents($fullentry,
+      "<?php\n".
+      "global \$cache_file;\n".
+      "\$cache_file = ". var_export(time(), TRUE) .";\n".
+      "?>"
+    );
+  }
+
+  require $fullentry;
+}
+
+?>
+}}}
