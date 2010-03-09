@@ -1,0 +1,78 @@
+#summary PHP String Snippets
+
+= utf-8 to big5 entity =
+
+{{{
+mb_substitute_character("long");
+//mb_regex_encoding('BIG-5');
+echo '&#'.hexdec(str_replace('U+', '', mb_convert_encoding("雫", 'BIG-5', 'UTF-8'))) .';<br />';
+}}}
+
+
+= safe_utf8_big5 =
+
+{{{
+/*
+ * UTF8->BIG5, 把 big5 不存在的字轉為 entity
+ */
+function safe_utf8_big5($str) {
+  if ($str == '') return '';
+  $big5 = iconv('UTF-8', 'BIG5', $str);
+  $big5_len = mb_strlen($big5, 'BIG5');
+  $utf8_len = mb_strlen($str, 'UTF-8');
+  if ($big5_len == $utf8_len) {
+    return $big5;
+  }
+  mb_substitute_character("long");
+  $problem_char = mb_substr($str, $big5_len, 1, 'UTF-8');
+  $entity = '&#'.hexdec(str_replace('U+', '', mb_convert_encoding($problem_char, 'BIG-5', 'UTF-8')));
+
+  return $big5 . $entity . safe_utf8_big5(mb_substr($str, $big5_len + 1, $utf8_len - $big5_len - 1, 'UTF-8'));
+}
+}}}
+
+
+= urlsafe_b64encode =
+
+{{{
+function urlsafe_b64encode($string) {
+  $data = base64_encode($string);
+  $data = str_replace(array('+','/','='),array('-','_','.'),$data);
+  return $data;
+}
+function urlsafe_b64decode($string) {
+  $data = str_replace(array('-','_','.'),array('+','/','='),$string);
+  $mod4 = strlen($data) % 4;
+  if ($mod4) {
+    $data .= substr('====', $mod4);
+  }
+  return base64_decode($data);
+}
+}}}
+
+
+= num2entities =
+
+{{{
+// 把數字(電話號碼)改為html實體，避免被搜尋引擎收錄
+// 前端依然可以正常顯示，但原始碼會變成HTML實體（如：&#48;）
+// @string $str：電話號碼
+function num2entities($str) {
+  $to = array(
+    '0'   =>  '&#48;', 
+    '1'   =>  '&#49;',
+    '2'   =>  '&#50;', 
+    '3'   =>  '&#51;',
+    '4'   =>  '&#52;', 
+    '5'   =>  '&#53;', 
+    '6'   =>  '&#54;',
+    '7'   =>  '&#55;', 
+    '8'   =>  '&#56;', 
+    '9'   =>  '&#57;', 
+    '-'   =>  '&#45;', 
+    '#'   =>  '&#35;',
+    '*'   =>  '&#42;',
+  );
+  return strtr($str, $to);
+}
+}}}
