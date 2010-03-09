@@ -67,3 +67,51 @@ function load_cache($cache_file) {
 
 ?>
 }}}
+
+= main template/sub view =
+
+{{{
+<?php
+$page = array(
+    'title' => 'This is default page content',
+    'content' => 'Default content',
+);
+
+if ($_GET['t'] == 1) {
+    $page['title'] = 'Content1';
+    $page['content1'] = 'This is content1';
+    $page['content'] = loadview($_GET['t'], $page);
+}
+
+function loadview($id, $page) {
+    ob_start();
+    require 'content'.$id.'.php';
+    $buffer = ob_get_contents();
+    @ob_end_clean();
+    return $buffer;
+}
+?>
+<html>
+<head>
+<title><?php echo $page['title']; ?></title>
+</head>
+
+<body>
+<p>header</p>
+
+<?php
+echo $page['content'];
+?>
+
+<p>footer</p>
+</body>
+</html>
+}}}
+
+{{{
+<div id="test" style="border: 1px solid red;">
+<?php
+echo $page['content1'];
+?>
+</div>
+}}}
