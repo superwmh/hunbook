@@ -1,5 +1,7 @@
 #summary Exams
 
+= reverse words in a given string =
+
 {{{
 $string = 'abcd efghi jklmno pqrstuvw xyz';
 reverse(&$string, 0, strlen($string) - 1);
