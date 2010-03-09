@@ -1,0 +1,33 @@
+#summary PHP File Snippets
+
+= prepare dir =
+
+{{{
+//傳入要存檔的檔名，此函數自動建立必須的目錄
+function _prepare_dir($save_file) {
+  if (file_exists(dirname($save_file))) {
+    return;
+  } else {
+    _prepare_dir(dirname($save_file));
+    mkdir(dirname($save_file));
+  }
+}
+}}}
+
+= reading file line by line =
+
+{{{
+$file = "test.txt";
+if (!$fp = fopen($file, 'rb')) {
+  echo "Can not read the file!\n";
+  return FALSE;
+}
+flock($fp, LOCK_SH);
+
+while ($line = fgets($fp, 10240)) {
+
+}
+
+flock($fp, LOCK_UN);
+fclose($fp);
+}}}
