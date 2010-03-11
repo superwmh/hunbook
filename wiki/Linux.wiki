@@ -1,0 +1,7 @@
+#summary Something about Linux
+
+= 設定自己的時區 =
+
+{{{
+export TZ="/usr/share/zoneinfo/Asia/Tapei"
+}}}
