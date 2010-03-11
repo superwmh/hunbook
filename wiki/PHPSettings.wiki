@@ -5,9 +5,7 @@
 echo date('Y-m-d H:i:s', 653410800); //1990-09-15 23:00:00
 echo date('Y-m-d H:i:s', 653410799); //1990-09-15 22:59:59
 }}}
-
 設定範例
-
 {{{
 [Date]
 ; Defines the default timezone used by the date functions
