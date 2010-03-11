@@ -1,4 +1,4 @@
 #summary Linux Screen Commands
 
-||Ctrl-A C||建新的 window||
-||Ctrl-A Shift-A||改 window 名稱||
+||*`Ctrl-A C`*||建新的 window||
+||*`Ctrl-A Shift-A`*||改 window 名稱||
