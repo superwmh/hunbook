@@ -2,8 +2,7 @@
 
 ||*`[ESC]`*||normal mode||
 ||*`[h],[j],[k],[l]`*||左 下 上 右||
-||*`[C]`*||change to the end of the line
-||
+||*`[C]`*||change to the end of the line||
 
 ||*`gg`*||go top of the file||
 ||*`G`*||go bottom of the file||
