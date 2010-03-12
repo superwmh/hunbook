@@ -1,0 +1,33 @@
+#summary VIM hotkeys/commands
+
+||*`[ESC]`*||normal mode||
+||*`[h],[j],[k],[l]`*||左 下 上 右||
+||*`[C]`*||change to the end of the line
+||
+
+||*`gg`*||go top of the file||
+||*`G`*||go bottom of the file||
+||*`H`*||go top of current screen||
+||*`M`*||go middle of current screen||
+||*`L`*||go last line of current screen||
+
+||*`^`*||go beginning of the line||
+||*`$`*||go end of the line||
+
+||*`[g][f]`*||get file which filename is under cursor||
+
+
+||*`v`*||visual mode||
+||*`y`*||yank||
+||*`p`*||paste||
+
+
+||*`i`*||insert mode||
+
+
+||*`:n`*||go line number [n]||
+||*`:set nonu`*||set no number||
+||*`:set nu`*||set number on||
+	
+
+||*`[Shift]-[Insert]`*||Paste by PuTTY||
