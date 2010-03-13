@@ -1,0 +1,36 @@
+#summary Several examples
+
+= Google Analytics =
+
+{{{
+(function() {
+  var ga = document.createElement('script');
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  ga.setAttribute('async', 'true');
+  document.documentElement.firstChild.appendChild(ga);
+})();
+}}}
+
+
+= Sprite Me =
+
+{{{
+(function(){
+  spritemejs=document.createElement('SCRIPT');
+  spritemejs.type='text/javascript';
+  spritemejs.src='http://spriteme.org/spriteme.js';
+  document.getElementsByTagName('head')[0].appendChild(spritemejs);
+})();
+}}}
+
+= XRay =
+
+{{{
+function loadScript(scriptURL) {
+  var scriptElem = document.createElement('SCRIPT'); 
+  scriptElem.setAttribute('language', 'JavaScript'); 
+  scriptElem.setAttribute('src', scriptURL); 
+  document.body.appendChild(scriptElem);
+}
+loadScript('http://westciv.com/xray/thexray.js');
+}}}
