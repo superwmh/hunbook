@@ -1,0 +1,7 @@
+#summary Hacks
+
+= 解除無法選取網頁內容 =
+
+{{{
+javascript:document.body.onselectstart=function() {};document.body.ondragstart=function() {};void(0);
+}}}
