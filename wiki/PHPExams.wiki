@@ -1,5 +1,12 @@
 #summary Exams
 
+= 印出 1~100 不能使用迴圈 =
+
+{{{
+echo join(' ', range(1, 100));
+}}}
+
+
 = reverse words in a given string =
 
 {{{
