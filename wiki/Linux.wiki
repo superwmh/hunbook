@@ -1,5 +1,13 @@
 #summary Something about Linux
 
+= multi core CPU =
+
+可以指定 CPU 增加效能
+
+{{{
+sudo taskset -c 1,2,3 /etc/init.d/apache2 restart
+}}}
+
 = 設定自己的時區 =
 
 {{{
