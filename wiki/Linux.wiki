@@ -2,7 +2,7 @@
 
 = multi core CPU =
 
-可以指定 CPU 增加效能
+指定 2~4 CPU 執行特定工作
 
 {{{
 sudo taskset -c 1,2,3 /etc/init.d/apache2 restart
