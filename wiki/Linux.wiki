@@ -2,7 +2,7 @@
 
 = multi core CPU =
 
-指定 2~4 CPU 執行特定工作
+指定 2~4 CPU 執行特定工作，留下 1 CPU 閒置，可以避免 CPU 被該作業完全鎖死
 
 {{{
 sudo taskset -c 1,2,3 /etc/init.d/apache2 restart
