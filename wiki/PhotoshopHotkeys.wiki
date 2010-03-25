@@ -5,3 +5,9 @@
 ||Ctrl-N||Open a new document||
 ||Ctrl-RClick on any object||Show possible layers||
 ||Ctrl-Click on layer thumbnail||Select objects in the layer||
+
+
+ref: 
+ * http://www.associatedcontent.com/article/88622/photoshop_tutorial_learning_the_photoshop.html
+ * http://morris-photographics.com/photoshop/shortcuts/downloads/PS7_Keyboard_Shortcuts.pdf
+ 
