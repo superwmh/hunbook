@@ -1,0 +1,7 @@
+#summary Photoshop Hotkeys
+
+||D||Resets the color palette to black/white||
+||X||Toggles the colors in the color palette||
+||Ctrl-N||Open a new document||
+||Ctrl-RClick on any object||Show possible layers||
+||Ctrl-Click on layer thumbnail||Select objects in the layer||
