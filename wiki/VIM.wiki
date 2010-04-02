@@ -64,11 +64,21 @@
 ||*`V`*||visual line mode||
 ||*`:s/{find_str}/{replace_str}`*||search and replace in selected text||
 
-== tab edit ==
+== tab view ==
 
 ||*`:tabe {file}`*||open {file} in new tab||
 ||*`gt`*||next tab||
 
+== split view ==
+
+||*`:split {file}`*||open {file} in horizontal split window||
+||*`:vsplit {file}`*||open {file} in vertical split window||
+||*`[CTRL]-w [UP]/[DOWN]/[LEFT]/[RIGHT]`*||focus another window||
+||*`[CTRL]-w [|]`*||enlarge current vertical window||
+||*`[CTRL]-w {n} [|]`*||set current vertical window to {n} column||
+||*`[CTRL]-w [=]`*||tile window||
+
+||*`[CTRL]-w [-]`*||enlarge current horizontal window||
 
 == others ==
 
@@ -81,4 +91,3 @@
 ||*`:set nonu`*||set no number||
 ||*`:set nu`*||set number on||
 ||*`:set paste`*||set paste mode||
-
