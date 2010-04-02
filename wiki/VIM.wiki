@@ -1,32 +1,84 @@
 #summary VIM hotkeys/commands
 
-||*`[ESC]`*||normal mode||
-||*`[h],[j],[k],[l]`*||左 下 上 右||
-||*`[C]`*||change to the end of the line||
+== mode ==
 
+||*`[ESC]`*||normal mode||
+||*`i`*||insert mode||
+||*`R`*||replace mode||
+||*`r`*||replace one charactor||
+||*`v`*||visual mode||
+||*`V`*||visual line mode||
+
+== move ==
+
+||*`[h],[j],[k],[l]`*||左 下 上 右||
 ||*`gg`*||go top of the file||
 ||*`G`*||go bottom of the file||
 ||*`H`*||go top of current screen||
 ||*`M`*||go middle of current screen||
 ||*`L`*||go last line of current screen||
-
 ||*`^`*||go beginning of the line||
 ||*`$`*||go end of the line||
+||*`b`*||backwards a word||
+||*`w`*||forward a word||
+||*`f{c}`*||find next char {c} in current line||
 
-||*`[g][f]`*||get file which filename is under cursor||
+== edit ==
 
+||*`[C]`*||change to the end of the line||
+||*`u`*||undo||
+||*`dw`*||delete word from current char to the end||
+||*`diw`*||delete whole word||
+||*`di>`*||delete whole string inside <>||
+||*`di)`*||delete whole string inside ()||
+||*`dt{c}`*||delete to {c} in the line||
+||*`Ctrl-r`*||redo||
+
+== indent ==
+
+||*`>`*||increase indent||
+||*`<`*||decrease indent||
+
+||*`V`*||visual line mode||
+||*`{n}>`*||increase {n} times indent||
+||*`{n}<`*||decrease {n} times indent||
+
+== paste ==
 
 ||*`v`*||visual mode||
 ||*`y`*||yank||
 ||*`p`*||paste||
 
+||*`V`*||visual line mode||
 
-||*`i`*||insert mode||
+||*`[Shift]-[Insert]`*||Paste by PuTTY (in insert mode!)||
 
+== find ==
+
+||*`/{str}[ENTER]`*||find {str}||
+||*`n`*||find next||
+||*`[SHIFT]-n`*||find previous||
+
+== replace ==
+
+||*`V`*||visual line mode||
+||*`:s/{find_str}/{replace_str}`*||search and replace in selected text||
+
+== tab edit ==
+
+||*`:tabe {file}`*||open {file} in new tab||
+||*`gt`*||next tab||
+
+
+== others ==
+
+||*`[CTRL]-p`*||auto complete||
+||*`[g][f]`*||get file which filename is under cursor||
+
+== commands ==
 
 ||*`:n`*||go line number [n]||
 ||*`:set nonu`*||set no number||
 ||*`:set nu`*||set number on||
-	
+||*`:set paste`*||set paste mode||
 
-||*`[Shift]-[Insert]`*||Paste by PuTTY||
