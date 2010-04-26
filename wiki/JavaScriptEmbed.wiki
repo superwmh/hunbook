@@ -38,6 +38,8 @@ loadScript('http://westciv.com/xray/thexray.js');
 = giveMeY = 
 
 {{{
+/*global window, document, alert, YUI
+*/
 (function () {
     if (typeof window.Y !== 'undefined') {
         alert('Y is already defined!');
@@ -53,12 +55,40 @@ loadScript('http://westciv.com/xray/thexray.js');
     js.setAttribute('src', 'http://yui.yahooapis.com/3.1.0/build/yui/yui-min.js');
     document.getElementsByTagName('head')[0].appendChild(js);
     js.onreadystatechange = function () {
-        if (js.readyState == 'complete') {
+        if (js.readyState === 'complete') {
             giveMeY();
         }
-    }
+    };
     js.onload = function () {
         giveMeY();
+    };
+}());
+}}}
+
+= giveMe$ =
+
+{{{
+/*global window, alert, document, $
+*/
+(function () {
+    if (typeof window.$ !== 'undefined') {
+        alert('$ is already defined!');
+        return false;
     }
-})();
+    var giveMe$, js = document.createElement('script');
+    giveMe$ = function () {
+        alert("jquery " + $.fn.jquery + " is ready for you.");
+    };
+    js.setAttribute('type', 'text/javascript');
+    js.setAttribute('src', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+    document.getElementsByTagName('head')[0].appendChild(js);
+    js.onreadystatechange = function () {
+        if (js.readyState === 'complete') {
+            giveMe$();
+        }
+    };
+    js.onload = function () {
+        giveMe$();
+    };
+}());
 }}}
