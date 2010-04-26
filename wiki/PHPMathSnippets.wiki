@@ -1,4 +1,4 @@
-#PHP Math Snippets
+#summary PHP Math Snippets
 
 = Decimal > Custom =
 
