@@ -45,10 +45,18 @@ loadScript('http://westciv.com/xray/thexray.js');
         alert('Y is already defined!');
         return false;
     }
+    if (typeof YUI === 'function' && typeof YUI().version === 'string') {
+        YUI().use('node', function (Y) {
+            window.Y = Y;
+            alert('YUI ' + YUI().version + ' is ready for you!');
+        });
+        return false;
+    }
     var giveMeY, js = document.createElement('script');
     giveMeY = function () {
         YUI().use('node', function (Y) {
             window.Y = Y;
+            alert('YUI ' + YUI().version + ' is ready for you!');
         });
     };
     js.setAttribute('type', 'text/javascript');
