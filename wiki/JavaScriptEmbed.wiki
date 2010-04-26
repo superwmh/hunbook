@@ -72,8 +72,11 @@ loadScript('http://westciv.com/xray/thexray.js');
 */
 (function () {
     if (typeof window.$ !== 'undefined') {
-        if ($.fn && $.fn.jquery)
-        alert('jQuery ' + $.fn.jquery + ' is already loaded!');
+        if ($.fn && $.fn.jquery) {
+            alert('jQuery ' + $.fn.jquery + ' is already loaded!');
+        } else {
+            alert('$ is already defined!');
+        }
         return false;
     }
     var giveMe$, js = document.createElement('script');
