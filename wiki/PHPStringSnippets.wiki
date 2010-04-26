@@ -76,3 +76,35 @@ function num2entities($str) {
   return strtr($str, $to);
 }
 }}}
+
+= Check UTF8 BOM =
+
+{{{
+  function check_utf8_bom($mute = 1) {
+    $dir = APPPATH;
+    $this->check_utf8_bom_dir($dir, $mute);
+    echo "\n";
+  }
+  function check_utf8_bom_dir($dir, $mute) {
+    $d = dir($dir);
+    $cnt = 0;
+    while (false !== ($entry = $d->read()) && $cnt < 10000) { //最多處理 1 萬筆
+      if ($entry == '.' || $entry == '..') continue;
+      $fullpath = $dir.$entry;
+      if (is_dir($fullpath)) {
+        $this->check_utf8_bom_dir($fullpath.'/', $mute);
+
+      } else if ($fp = fopen($fullpath, 'r')) {
+        $line = fgets($fp, 20);
+        if (strpos($line, "\xef\xbb\xbf") === 0) {
+          echo "\n", $fullpath;
+        } else if ($mute == 0) {
+          echo '.';
+        }
+      }
+      ++$cnt;
+    }
+    if ($mute == 0)
+      echo "\n";
+  }
+}}}
