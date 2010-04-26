@@ -34,3 +34,31 @@ function loadScript(scriptURL) {
 }
 loadScript('http://westciv.com/xray/thexray.js');
 }}}
+
+= giveMeY = 
+
+{{{
+(function () {
+    if (typeof window.Y !== 'undefined') {
+        alert('Y is already defined!');
+        return false;
+    }
+    var giveMeY, js = document.createElement('script');
+    giveMeY = function () {
+        YUI().use('node', function (Y) {
+            window.Y = Y;
+        });
+    };
+    js.setAttribute('type', 'text/javascript');
+    js.setAttribute('src', 'http://yui.yahooapis.com/3.1.0/build/yui/yui-min.js');
+    document.getElementsByTagName('head')[0].appendChild(js);
+    js.onreadystatechange = function () {
+        if (js.readyState == 'complete') {
+            giveMeY();
+        }
+    }
+    js.onload = function () {
+        giveMeY();
+    }
+})();
+}}}
