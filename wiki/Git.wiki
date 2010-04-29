@@ -1,0 +1,11 @@
+#summary Git
+
+= .git/config =
+
+{{{
+[core]
+	autocrlf = input  # force convert crlf to lf
+[user]
+	name = HunterLaptop
+	email = hunter.wu@gmail.com
+}}}
