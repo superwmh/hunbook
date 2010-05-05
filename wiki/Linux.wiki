@@ -14,7 +14,7 @@ sudo taskset -c 1,2,3 /etc/init.d/apache2 restart
 export TZ="/usr/share/zoneinfo/Asia/Tapei"
 }}}
 
-=  change the resolution =
+= change the resolution =
 
 {{{
 ; This will show the resolutions possible on your monitor
@@ -22,4 +22,13 @@ xrandr
 
 ; This will immediately change the resolution; in this case to 1024x760.
 xrandr -s 1024x760
+}}}
+
+
+= install package =
+
+{{{
+yum search ImageMagick
+yum install ImageMagick.x86_64
+yum install ImageMagick-perl.x86_64
 }}}
