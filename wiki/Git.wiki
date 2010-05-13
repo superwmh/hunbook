@@ -9,3 +9,16 @@
 	name = HunterLaptop
 	email = hunter.wu@gmail.com
 }}}
+
+
+= commit =
+
+{{{
+git commit -am "Upload all modified files"
+}}}
+
+{{{
+git add file1
+git add file2
+git commit -m "Upload all added files only"
+}}}
