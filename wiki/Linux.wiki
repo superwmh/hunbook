@@ -25,10 +25,21 @@ xrandr -s 1024x760
 }}}
 
 
-= install package =
+= YUM =
 
 {{{
 yum search ImageMagick
 yum install ImageMagick.x86_64
 yum install ImageMagick-perl.x86_64
+yum update ImageMagick-perl.x86_64
+yum remove ImageMagick-perl.x86_64
+
+#清除暫存檔
+yum clean all
+
+#列出已安裝的套件
+yum list installed
+
+#列出可以更新的套件
+yum list updates
 }}}
