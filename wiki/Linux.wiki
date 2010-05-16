@@ -48,6 +48,8 @@ yum list updates
 
 == 螢幕解析度 ==
 
+ref: http://forums.virtualbox.org/viewtopic.php?f=3&t=15679
+
 Edit the `/etc/X11/xorg.conf` and add something like this.
 {{{
 Section "Screen"
