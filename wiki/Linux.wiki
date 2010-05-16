@@ -44,7 +44,13 @@ yum list installed
 yum list updates
 }}}
 
-= pecl =
+= PHP =
+
+{{{
+yum install php.i386
+}}}
+
+== pecl ==
 
 {{{
 pecl install json
