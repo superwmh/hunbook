@@ -43,3 +43,16 @@ yum list installed
 #列出可以更新的套件
 yum list updates
 }}}
+
+= Virtual Box = 
+
+== 螢幕解析度 ==
+
+/etc/X11/xorg.conf
+{{{
+SubSection "Display"
+   Modes   "1280x900" "1280x800" "1280x1024" "1024x768" "800x600" "640x480"
+...
+}}}
+
+
