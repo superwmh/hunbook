@@ -44,6 +44,12 @@ yum list installed
 yum list updates
 }}}
 
+= pecl =
+
+{{{
+pecl install json
+}}}
+
 = Virtual Box = 
 
 == 螢幕解析度 ==
