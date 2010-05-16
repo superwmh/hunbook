@@ -48,11 +48,15 @@ yum list updates
 
 {{{
 yum install php.i386
+yum install automake
+yum install curl-devel
+yum install php-pear.noarch
 }}}
 
 == pecl ==
 
 {{{
+yum install gcc.i386
 pecl install json
 }}}
 
