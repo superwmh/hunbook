@@ -44,13 +44,14 @@ yum list installed
 yum list updates
 }}}
 
-= PHP =
+= PHP on CentOS 5.3 =
 
 {{{
 yum install php.i386
 yum install automake
 yum install curl-devel
 yum install php-pear.noarch
+yum install php-mbstring.i386
 }}}
 
 == pecl ==
