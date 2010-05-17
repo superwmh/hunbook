@@ -49,14 +49,15 @@ yum list updates
 {{{
 yum install php-devel
 yum install curl-devel
-yum install php-pear.noarch
-yum install php-mbstring.i386
+yum install php-pear
+yum install php-mbstring
 }}}
 
 == pecl ==
 
 {{{
-yum install gcc.i386
+#yum install php-pear
+#yum install gcc
 pecl install json
 }}}
 
