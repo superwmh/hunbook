@@ -29,10 +29,9 @@ xrandr -s 1024x760
 
 {{{
 yum search ImageMagick
-yum install ImageMagick.x86_64
-yum install ImageMagick-perl.x86_64
-yum update ImageMagick-perl.x86_64
-yum remove ImageMagick-perl.x86_64
+yum install ImageMagick
+yum update ImageMagick
+yum remove ImageMagick
 
 #清除暫存檔
 yum clean all
