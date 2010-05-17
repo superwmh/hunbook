@@ -80,3 +80,13 @@ Section "Screen"
        EndSubSection
 EndSection
 }}}
+
+== console resolution ==
+Edit `/etc/grub.conf`, Add `vga=791`
+
+{{{
+title CentOS (2.6.18-53.1.19.el5PAE)
+  root (hd0,0)
+  kernel /vmlinuz-2.6.18-53.1.19.el5PAE ro root=/dev/VolGroup00/LogVol00 console=ttyS0,57600 console=tty0 vga=791
+  initrd /initrd-2.6.18-53.1.19.el5PAE.img
+}}}
