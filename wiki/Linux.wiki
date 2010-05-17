@@ -58,6 +58,7 @@ yum install php-mbstring
 {{{
 #yum install php-pear
 #yum install gcc
+#pecl channel-update pear.php.net
 pecl install json
 }}}
 
