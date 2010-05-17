@@ -47,8 +47,7 @@ yum list updates
 = PHP on CentOS 5.3 =
 
 {{{
-yum install php.i386
-yum install automake
+yum install php-devel
 yum install curl-devel
 yum install php-pear.noarch
 yum install php-mbstring.i386
