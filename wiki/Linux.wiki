@@ -47,10 +47,10 @@ yum list updates
 = PHP on CentOS 5.3 =
 
 {{{
-yum install php-devel
-yum install curl-devel
+yum install php
 yum install php-pear
 yum install php-mbstring
+yum update curl
 }}}
 
 == pecl ==
