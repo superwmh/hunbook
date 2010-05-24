@@ -8,7 +8,7 @@ Banker.Deposit( mobile, 1200 );
 mobile.SendMessage( "1200 saved" );
 
 //頭頂的訊息
-//using Server.Network.MessageType;
+//using Server.Network;
 mobile.PublicOverheadMessage( type, hue, ascii, text);
 mobile.PublicOverheadMessage( MessageType.Regular, 41, false, "Testing..." );
 
