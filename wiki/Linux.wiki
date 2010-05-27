@@ -14,6 +14,11 @@ sudo taskset -c 1,2,3 /etc/init.d/apache2 restart
 export TZ="/usr/share/zoneinfo/Asia/Tapei"
 }}}
 
+= 刪除超過多久的檔案 =
+{{{
+cd /home/webuser/NA/sessions; find -cmin +2880 | xargs rm
+}}}
+
 = change the resolution =
 
 {{{
