@@ -66,6 +66,26 @@ yum update curl
 pecl install json
 }}}
 
+== timezone ==
+
+{{{
+yum install ntp
+rm /etc/localtime
+cp -a /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+}}}
+
+{{{
+vim /etc/sysconfig/clock
+ZONE="America/Los_Angeles"
+UTC=false
+ARC=false
+}}}
+
+{{{
+vim /etc/php.ini
+date.timezone = Asia/Taipei
+}}}
+
 = Virtual Box = 
 
 == 螢幕解析度 ==
