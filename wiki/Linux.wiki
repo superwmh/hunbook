@@ -70,13 +70,14 @@ pecl install json
 
 {{{
 yum install ntp
+yum update tzdata
 rm /etc/localtime
 cp -a /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 }}}
 
 {{{
 vim /etc/sysconfig/clock
-ZONE="America/Los_Angeles"
+ZONE="Asia/Taipei"
 UTC=false
 ARC=false
 }}}
