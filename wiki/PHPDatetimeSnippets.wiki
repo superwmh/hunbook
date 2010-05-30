@@ -6,3 +6,8 @@
 $str = 'Sun, 30 May 2010 04:07:38 GMT';
 echo date("Y-m-d H:i:s", strtotime($str));
 }}}
+
+{{{
+// SimplePie item class
+$ts = strtotime($item->get_date(DATE_ATOM));
+}}}
