@@ -1,0 +1,77 @@
+#summary CodeIgniter
+
+= Sytem Fixes =
+
+== DB_driver.php ==
+
+{{{
+var $save_queries        = FALSE;  //預設值改為 FALSE，避免大量 query 時浪費記憶體
+}}}
+
+
+= Snippets =
+
+
+== database ==
+
+{{{
+$query = $this->db->query($sql);
+
+//取得筆數
+$query->num_rows();
+
+//取得一筆
+$row = $query->row_array();
+
+//result loop
+foreach ($query->result_array() as $row) {
+
+}
+
+//取出其他設定檔
+$this->dbForum = $this->load->database('forum', TRUE);
+
+//大量 query 時不要存 sql 語法
+$this->db->save_queries = FALSE;
+}}}
+
+== config ==
+{{{
+//primary config
+echo $this->config->item('base_url'), "<hr />";
+
+//load custom config file
+$this->config->load('test1');
+echo $this->config->item('test_desc'), "<hr />";
+
+//to avoid collisions
+$this->config->load('test2', TRUE);
+echo $this->config->item('test_desc'), "<hr />";            //from test1
+echo $this->config->item('test_desc', 'test2'), "<hr />";   //from test2
+}}}
+
+== CLI ==
+
+{{{
+<?php
+
+if (isset($_SERVER['SERVER_ADDR']) || isset($_SERVER['REMOTE_ADDR'])) {
+    echo 'no web access';
+    exit;
+}
+
+ini_set('max_execution_time','0');
+set_time_limit(0);
+ini_set('memory_limit', '256M');
+
+$_SERVER['PATH_INFO']    = $argv[1];
+$_SERVER['QUERY_STRING'] = $argv[1];
+
+require dirname(__FILE__).'/index.php';
+
+/**
+* Usage: $ php cli.php controller/action[/parameters]
+*/
+
+?>
+}}}
