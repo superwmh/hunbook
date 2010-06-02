@@ -97,6 +97,18 @@ vim /etc/php.ini
 date.timezone = Asia/Taipei
 }}}
 
+= ls =
+
+{{{
+# 用 ls 指令會列出目錄下的內容，如果想知道目錄下有多少檔案及多少目錄，可以輸入以下指令:
+
+# 顯示檔案數目:
+ls -la | grep "^-" | awk 'END {print "Number of files: " NR}'
+
+# 顯示目錄數目:
+ls -la | grep "^d" | awk 'END {print "Number of directories: " NR}'
+}}}
+
 = Virtual Box = 
 
 == 螢幕解析度 ==
