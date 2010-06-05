@@ -345,6 +345,17 @@ mkdir .ssh
 cd .ssh
 wget http://jsgears.googlecode.com/svn/trunk/settings/.ssh/authorized_keys
 
+yum install php -y
+yum install php-pear -y
+yum install php-mbstring -y
+yum update curl -y
+yum install gcc -y
+pecl channel-update pear.php.net
+pecl install json
+
 
 
 }}}
+
+
+
