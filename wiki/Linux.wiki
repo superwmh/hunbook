@@ -353,9 +353,7 @@ yum install gcc -y
 pecl channel-update pear.php.net
 pecl install json
 
-
-
+vim /etc/php.ini
+date.timezone = Asia/Taipei
 }}}
-
-
 
