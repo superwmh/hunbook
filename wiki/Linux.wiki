@@ -355,5 +355,7 @@ pecl install json
 
 vim /etc/php.ini
 date.timezone = Asia/Taipei
-}}}
 
+vim /etc/php.d/json.ini
+extension=json.so
+}}}
