@@ -326,3 +326,21 @@ highlight TabLine ctermbg=blue
 highlight TabLineFill ctermbg=green
 highlight TabLineSel ctermbg=red
 }}}
+
+
+= My VPS Installation =
+
+{{{
+tzselect
+5
+43
+1
+yum update tzdata -y
+rm /etc/localtime -f
+cp -a /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
+wget http://jsgears.googlecode.com/svn/trunk/settings/.screenrc
+
+
+
+}}}
