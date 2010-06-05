@@ -340,6 +340,10 @@ rm /etc/localtime -f
 cp -a /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
 wget http://jsgears.googlecode.com/svn/trunk/settings/.screenrc
+wget http://jsgears.googlecode.com/svn/trunk/settings/.vimrc
+mkdir .ssh
+cd .ssh
+wget http://jsgears.googlecode.com/svn/trunk/settings/.ssh/authorized_keys
 
 
 
