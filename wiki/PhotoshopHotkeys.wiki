@@ -7,7 +7,7 @@
 ||`Ctrl-N`||Open a new document||
 ||`Ctrl-Click on layer thumbnail`||Select objects in the layer||
 ||`Ctrl-RClick on any object`||Show possible layers||
-||`Ctrl-Shift-I`||Reverse Selection||
+||`Ctrl-Shift-I`||Inverse Selection||
 ||`Shift-F5`||Fill||
 
 ref: 
