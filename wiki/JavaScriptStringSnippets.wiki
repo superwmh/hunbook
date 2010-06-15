@@ -1,0 +1,9 @@
+#summary JavaScript String Snippets
+
+
+= break word in firefox = 
+{{{
+function setBreak(sString) {
+    return sString.replace(/([\w|\d|\.|\@]{4})/g, "\$1<wbr>");
+}
+}}}
