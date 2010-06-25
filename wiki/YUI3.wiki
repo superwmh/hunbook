@@ -12,3 +12,11 @@ this.init is undefined (FireFox)
 }}}
 
 以上問題可能是因為在產生物件時，少打了 `new`
+
+{{{
+// 錯
+var router = Y.RouterAPI();
+
+// 正確
+var router = new Y.RouterAPI();
+}}}
