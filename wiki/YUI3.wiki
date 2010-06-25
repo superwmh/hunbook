@@ -4,11 +4,11 @@
 
 == new object instance ==
 {{{
-Uncaught TypeError: Cannot call method 'apply' of undefined (Chrome)
-}}}
+// Chrome:
+Uncaught TypeError: Cannot call method 'apply' of undefined
 
-{{{
-this.init is undefined (FireFox)
+// FireFox:
+this.init is undefined
 }}}
 
 以上問題可能是因為在產生物件時，少打了 `new`
