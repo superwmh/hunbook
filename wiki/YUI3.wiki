@@ -1,0 +1,14 @@
+#summary YUI3 Notes
+
+= mistakes =
+
+== new object instance ==
+{{{
+Uncaught TypeError: Cannot call method 'apply' of undefined (Chrome)
+}}}
+
+{{{
+this.init is undefined (FireFox)
+}}}
+
+以上問題可能是因為在產生物件時，少打了 `new`
