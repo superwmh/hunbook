@@ -89,6 +89,21 @@ yum update curl
 pecl install json
 }}}
 
+== pecl intl ==
+
+{{{
+yum install icu libicu libicu-devel
+export ICU_PATH=/usr
+export ICU_LINK=-L/usr/lib64
+
+yum install gcc-c++
+
+pecl install intl
+
+vim /etc/php.d/intl.ini
+extension=intl.so
+}}}
+
 == timezone ==
 
 {{{
