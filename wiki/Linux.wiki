@@ -60,6 +60,19 @@ yum list updates
 
 = PHP on CentOS 5.3 =
 
+== PHP new version ==
+
+{{{
+vim /etc/yum.repos.d/CentOS-Base.repo
+
+[c5-testing]
+name=CentOS-5 Testing
+baseurl=http://dev.centos.org/centos/5/testing/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://dev.centos.org/centos/RPM-GPG-KEY-CentOS-testing
+}}}
+
 {{{
 yum install php
 yum install php-pear
