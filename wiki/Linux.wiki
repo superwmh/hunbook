@@ -1,5 +1,11 @@
 #summary Something about Linux
 
+= 查 distribution 版本 =
+
+{{{
+lsb_release -a
+}}} 
+
 = multi core CPU =
 
 指定 2~4 CPU 執行特定工作，留下 1 CPU 閒置，可以避免 CPU 被該作業完全鎖死
