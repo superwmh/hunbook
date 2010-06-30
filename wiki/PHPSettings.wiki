@@ -1,5 +1,6 @@
 #summary PHP Settings
 
+
  * date.timezone 沒有設定時，可能造成 date() 算錯，可 check 以下兩個值：
 {{{
 echo date('Y-m-d H:i:s', 653410800), "\n"; //1990-09-15 23:00:00
@@ -17,4 +18,11 @@ date.timezone = Asia/Taipei
 {{{
 extension=php_mbstring.dll
 extension=php_exif.dll
+}}}
+
+ * 可直接取得 POST RAW DATA
+
+{{{
+; Always populate the $HTTP_RAW_POST_DATA variable.
+always_populate_raw_post_data = On
 }}}
