@@ -14,7 +14,7 @@ Alias /myproject1/ "D:/Workspace/GitRepositories/myproject1/"
 }}}
 
 
-= CodeIgniter Rewrite Rule =
+= !CodeIgniter Rewrite Rule =
 
 {{{
 <Directory "D:/Workspace/GitRepositories/myproject2">
@@ -48,4 +48,25 @@ NameVirtualHost *:8000
     ErrorLog "logs/myproject3.example.com-error.log"
     CustomLog "logs/myproject3.example.com-access.log" common
 </VirtualHost>
+}}}
+
+= SSL =
+
+== key & cert files ==
+
+{{{
+http://jsgears.googlecode.com/svn/trunk/settings/h.com/h.com.server.crt
+http://jsgears.googlecode.com/svn/trunk/settings/h.com/h.com.server.key
+}}}
+
+== extra/httpd-ssl.conf ==
+
+{{{
+SSLSessionCache        "shmcb:/PathTo/Apache2.2/logs/ssl_scache(512000)"
+
+ServerName h.com:443
+
+SSLCertificateFile "/PathTo/Apache2.2/conf/h.com.server.crt"
+
+SSLCertificateKeyFile "/PathTo/Apache2.2/conf/h.com.server.key"
 }}}
