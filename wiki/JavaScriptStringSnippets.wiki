@@ -2,8 +2,19 @@
 
 
 = break word in firefox = 
+
 {{{
+// from awoo
 function setBreak(sString) {
     return sString.replace(/([\w|\d|\.|\@]{4})/g, "\$1<wbr>");
+}
+}}}
+
+{{{
+// http://ejohn.org/blog/injecting-word-breaks-with-javascript/
+function wbr(str, num) {  
+  return str.replace(RegExp("(\\w{" + num + "})(\\w)", "g"), function(all,text,char){ 
+    return text + "<wbr>" + char; 
+  }); 
 }
 }}}
