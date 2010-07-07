@@ -1,0 +1,37 @@
+#summary jsLint Notes
+
+= Installation on windows =
+
+== jslint.bat ==
+{{{
+@java -jar D:\java\rhino1_7R2\js.jar D:\bat\jslint-rhino.js %1
+}}}
+
+{{{
+// usage
+jslint myfile.js
+}}}
+
+= Problems =
+
+== Problem at line xx character xx: Read only. ==
+
+ * *問題：*因為想在 closure 內共用 global 的變數，又不確定該 global 變數是否已存在，所以使用以下寫法：
+{{{
+/*global CONST
+*/
+(function () {
+    CONST = CONST || {};
+}());
+}}}
+
+ * *解法：*改用內部變數先接 global 變數，最後再丟回給 window
+{{{
+/*global window
+*/
+(function () {
+    var CONST = window.CONST || {};
+    //...
+    window.CONST = CONST;
+}());
+}}}
