@@ -39,7 +39,6 @@ jslint myfile.js
 == array loop ==
 
  * *問題：* jslint 不准在 loop 語法內直接取 array 長度、各變數又要先定義，所以為了 array loop 得定義多個變數，loop 有兩層就囉唆了
-
 {{{
 function array_sum (arr) {
     var i, len = arr.length;
