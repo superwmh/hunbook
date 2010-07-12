@@ -35,3 +35,31 @@ jslint myfile.js
     window.CONST = CONST;
 }());
 }}}
+
+== array loop ==
+
+ * *問題：* jslint 不准在 loop 語法內直接取 array 長度、各變數又要先定義，所以為了 array loop 得定義多個變數，loop 有兩層就囉唆了
+
+{{{
+function array_sum (arr) {
+    var i, len = arr.length;
+    for (i = 0; i < len; i += 1) {
+        // do something
+    }
+}
+}}}
+
+ * *解法：*改用 js framework 的 each() 可解決，但是因為多了很多的 function call，效能會變差
+{{{
+function array_sum (arr) {
+    // jQuery 版
+    $.each(arr, function (val) {
+        // do something
+    });
+
+    //YUI 版
+    Y.each(arr, function (val) {
+        // do something
+    });
+}
+}}}
