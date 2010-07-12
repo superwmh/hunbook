@@ -39,14 +39,19 @@ Include conf/extra/httpd-vhosts.conf
 == httpd-vhosts.conf ==
 
 {{{
-NameVirtualHost *:8000
+NameVirtualHost 127.0.0.1:8000
 
-<VirtualHost *:8000>
-    ServerAdmin admin@example.com
-    DocumentRoot "D:/Workspace/GitRepositories/myproject3"
+<VirtualHost w1.example.com:8000>
+    DocumentRoot "D:/Workspace/GitRepositories/w1"
     ServerName myproject3.example.com
+    ServerAdmin admin@example.com
     ErrorLog "logs/myproject3.example.com-error.log"
     CustomLog "logs/myproject3.example.com-access.log" common
+</VirtualHost>
+
+<VirtualHost w2.example.com:8000>
+    DocumentRoot "D:/Workspace/GitRepositories/w2"
+    ServerName myproject3.example.com
 </VirtualHost>
 }}}
 
