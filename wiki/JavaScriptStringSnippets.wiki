@@ -13,7 +13,7 @@ function setBreak(sString) {
 {{{
 // http://ejohn.org/blog/injecting-word-breaks-with-javascript/
 function wbr(str, num) {  
-  return str.replace(RegExp("(\\w{" + num + "})(\\w)", "g"), function(all,text,char){ 
+  return str.replace(new RegExp("(\\w{" + num + "})(\\w)", "g"), function (all, text, char){ 
     return text + "<wbr>" + char; 
   }); 
 }
