@@ -12,6 +12,12 @@ function setBreak(sString) {
 
 {{{
 // revised version from John Resig's
+
+/**
+ * NOTE: YUI compressor will cause error if we use new RegExp() to
+ *       combine reg pattern here.
+ */
+
 function wbr (str, num) {
     var pattern;
     switch (num) {
