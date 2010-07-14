@@ -37,7 +37,7 @@ function wbr (str, num) {
         pattern = /(\w{6})(\w)/g;
         break;
     default:
-        return str; //all other not support!
+        return str; //all others not support!
     }
     return str.replace(pattern, function (all, text, ch) {
         return text + "<wbr>" + ch;
