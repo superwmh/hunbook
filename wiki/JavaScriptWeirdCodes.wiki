@@ -1,0 +1,11 @@
+#summary JavaScript Weird Codes
+
+{{{
+//http://topic.csdn.net/u/20100716/15/256302a7-f906-467b-882d-94e8e8c3a1fd.html?45654
+p= /[*]/g;
+s= "*";
+console.log(p.test(s));
+console.log(p.test(s));
+console.log(p.test(s));
+console.log(p.test(s));
+}}}
