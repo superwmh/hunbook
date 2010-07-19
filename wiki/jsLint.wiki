@@ -48,7 +48,7 @@ function array_sum (arr) {
 }
 }}}
 
- * *解法：*改用 js framework 的 each() 可解決，但是因為多了很多的 function call，效能會變差
+ * *解法：*改用 js framework 的 each() 可解決
 {{{
 function array_sum (arr) {
     // jQuery 版
@@ -62,3 +62,7 @@ function array_sum (arr) {
     });
 }
 }}}
+
+ * *缺點*：
+  * 多了很多的 function call，效能會變差
+  * 不適合在 loop 一半會有跳出的情況使用 (應該是吧，因為是 framework 在 loop...)
