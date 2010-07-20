@@ -1,6 +1,8 @@
 #summary crossdomain.xml
 
-= Introduction =
+= Examples =
+
+*這裡的 domain 是指 swf 所在 host，非網頁的 host* 
 
 {{{
 <?xml version="1.0"?>
