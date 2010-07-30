@@ -1,0 +1,5 @@
+#summary Browser Sucks
+
+= Firefox sucks =
+
+== Details ==
