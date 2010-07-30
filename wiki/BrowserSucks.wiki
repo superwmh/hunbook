@@ -2,4 +2,5 @@
 
 = Firefox sucks =
 
-== Details ==
+ * Change of body overflow causes flash repaint
+ * Change of element overflow causes offset properties reset
