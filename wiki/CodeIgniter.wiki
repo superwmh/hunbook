@@ -35,6 +35,9 @@ $this->dbForum = $this->load->database('forum', TRUE);
 $this->db->save_queries = FALSE;
 }}}
 
+
+//新增的 id
+$this->db->insert_id()
 == config ==
 {{{
 //primary config
