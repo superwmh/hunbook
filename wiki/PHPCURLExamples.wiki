@@ -44,4 +44,4 @@ curl_close($ch);
 //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);  //不檢查 SSL 憑證是否有效
 //curl_setopt($ch, CURLOPT_CAINFO, 'D:/Server/curl-7.19.4/versign_s.cer');  //直接指定 CA Cert
 //curl_setopt($ch, CURLOPT_CAINFO, 'D:/Server/curl-7.19.4/curl-ca-bundle.crt'); // CA Bundle
-}}
+}}}
