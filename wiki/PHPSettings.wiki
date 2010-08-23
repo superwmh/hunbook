@@ -13,6 +13,12 @@ echo date('Y-m-d H:i:s', 653410799), "\n"; //1990-09-15 22:59:59
 date.timezone = Asia/Taipei
 }}}
 
+
+ * 虛擬主機的時區設定不符合需求，可用以下取代：
+{{{
+date_default_timezone_set('Asia/Taipei');
+}}}
+
  * extensions 順序，php_mbstring.dll 應該要在 php_exif.dll 前面：
 
 {{{
