@@ -1,0 +1,7 @@
+#summary Something about HTTP
+
+= AJAX Request Header =
+
+{{{
+[HTTP_X_REQUESTED_WITH] => XMLHttpRequest
+}}}
