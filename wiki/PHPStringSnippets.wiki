@@ -108,3 +108,13 @@ function num2entities($str) {
       echo "\n";
   }
 }}}
+
+= get_utf8_basename =
+
+{{{
+// 若路徑有中文，不能直接用 basename() 去取
+function get_utf8_basename($str) {
+    $last_slash = mb_strrpos($str, "/", "utf-8");
+    return mb_substr($str, ++$last_slash, mb_strlen($str, "utf-8"), "utf-8");
+}
+}}}
