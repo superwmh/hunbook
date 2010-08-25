@@ -4,7 +4,7 @@
 
  * ref: [http://trac.edgewall.org/wiki/TracTicketsCustomFields]
 
-= custom workflow =
+= Custom Workflow =
 
  * ref: [http://trac.edgewall.org/wiki/TracWorkflow TracWorkflow]
 
