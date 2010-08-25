@@ -37,7 +37,7 @@ resolve.permissions = TICKET_ADMIN
 
  * setting 2
 
-http://commondatastorage.googleapis.com/0000/muchiii/tracworkflow.png
+http://commondatastorage.googleapis.com/0000/muchiii/tracworkflow_v1.1.png
 
 {{{
 [ticket-workflow]
