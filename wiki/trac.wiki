@@ -2,6 +2,8 @@
 
 = custom workflow =
 
+ * ref: [http://trac.edgewall.org/wiki/TracWorkflow TracWorkflow]
+
  * setting 1
 
 http://img269.imageshack.us/img269/2329/tracworkflowv120091126.png
