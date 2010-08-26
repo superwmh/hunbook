@@ -64,3 +64,33 @@ resolve.permissions = TICKET_MODIFY
 verify = in_review -> closed
 verify.permissions = TICKET_MODIFY
 }}}
+
+ * setting 2
+
+http://commondatastorage.googleapis.com/0000/muchiii/tracworkflow_v1.3.png
+
+{{{
+[ticket-workflow]
+accept = new,assigned,reopened -> accepted
+accept.permissions = TICKET_MODIFY
+accept.operations = set_owner_to_self
+fail = in_review -> assigned
+fail.operations = del_resolution
+fail.permissions = TICKET_MODIFY
+fail.name = Verify as failed
+leave = * -> *
+leave.default = 2
+leave.operations = leave_status
+reassign = new,assigned,reopened,accepted -> assigned
+reassign.operations = set_owner
+reassign.permissions = TICKET_MODIFY
+reopen = closed -> reopened
+reopen.operations = del_resolution
+reopen.permissions = TICKET_CREATE
+resolve = assigned,accepted -> in_review
+resolve.operations = set_resolution
+resolve.permissions = TICKET_MODIFY
+verify = in_review -> closed
+verify.name = Verify as succeed
+verify.permissions = TICKET_MODIFY
+}}}
