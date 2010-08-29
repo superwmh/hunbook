@@ -6,3 +6,62 @@
 yum install mysql-server
 yum install php-mysql
 }}}
+
+= highperformance.conf =
+
+{{{
+Listen 80
+ServerRoot /usr/local/apache
+DocumentRoot /usr/local/apache/htdocs
+
+User  nobody
+Group nobody
+
+<IfModule prefork.c>
+MaxClients       150
+StartServers     5
+MinSpareServers  5
+MaxSpareServers 10
+</IfModule>
+
+<IfModule worker.c>
+StartServers         2
+MaxClients         150
+MinSpareThreads     25
+MaxSpareThreads     75
+ThreadsPerChild     25
+MaxRequestsPerChild  0
+</IfModule>
+
+# Assume no memory leaks at all
+MaxRequestsPerChild 0
+
+# it's always nice to know the server has started
+ErrorLog logs/error_log
+
+# Some benchmarks require logging, which is a good requirement.  Uncomment
+# this if you need logging.
+#TransferLog logs/access_log
+
+<Directory />
+    # The server can be made to avoid following symbolic links,
+    # to make security simpler. However, this takes extra CPU time,
+    # so we will just let it follow symlinks.
+    Options FollowSymLinks
+
+    # Don't check for .htaccess files in each directory - they slow
+    # things down
+    AllowOverride None
+
+    # If this was a real internet server you'd probably want to
+    # uncomment these:
+    #order deny,allow
+    #deny from all
+</Directory>
+
+# If this was a real internet server you'd probably want to uncomment this:
+#<Directory "/usr/local/apache/htdocs">
+#    order allow,deny
+#    allow from all
+#</Directory>
+}}}
