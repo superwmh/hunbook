@@ -110,3 +110,11 @@ basedir=/var/lib
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 }}}
+
+= mysql =
+
+{{{
+/usr/bin/mysqladmin -u root password 'new-password'
+/usr/bin/mysqladmin -u root -h p password 'new-password'
+/usr/bin/mysql_secure_installation
+}}}
