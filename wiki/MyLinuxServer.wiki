@@ -1,0 +1,8 @@
+#summary Log
+
+= packages =
+
+{{{
+yum install mysql-server
+yum install php-mysql
+}}}
