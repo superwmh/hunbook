@@ -38,6 +38,12 @@ git checkout staging430
 # reset to a specifed commmit
 git reset 07eeb38562957ea1e486bfa8ace343d94e66d57b
 git checkout -f 
+
+# merge
+git merge testing
+
+# delete
+git branch -d testing
 }}}
 
 = ignore file =
