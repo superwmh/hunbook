@@ -118,3 +118,11 @@ pid-file=/var/run/mysqld/mysqld.pid
 /usr/bin/mysqladmin -u root -h p password 'new-password'
 /usr/bin/mysql_secure_installation
 }}}
+
+
+= app =
+
+{{{
+chown apache:apache * -R
+
+}}}
