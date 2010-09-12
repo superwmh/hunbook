@@ -111,6 +111,13 @@ log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 }}}
 
+{{{
+#http://plog.longwin.com.tw/my_note-unix/2009/06/16/perl-pretty-print-ini-cnf-2009
+max_connect_errors = 1844674407370954751
+connect_timeout = 20
+skip-name-resolve
+slave_net_timeout = 30
+}}}
 = mysql =
 
 {{{
