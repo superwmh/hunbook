@@ -120,9 +120,14 @@ pid-file=/var/run/mysqld/mysqld.pid
 }}}
 
 
+= user/group =
+
+{{{
+usermod -G apache wmh
+}}}
+
 = app =
 
 {{{
 chown apache:apache * -R
-
 }}}
