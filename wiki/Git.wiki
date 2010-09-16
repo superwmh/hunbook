@@ -46,6 +46,12 @@ git merge testing
 git branch -d testing
 }}}
 
+= diff =
+
+{{{
+git diff yourfile
+}}}
+
 = ignore file =
 
  * .git/info/exclude
