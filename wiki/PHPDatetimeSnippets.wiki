@@ -1,5 +1,11 @@
 #summary PHP Datetime Snippets
 
+= 用 Taipei time，不管主機在哪裡 =
+
+{{{
+date_default_timezone_set('Asia/Taipei');
+}}}
+
 = strtotime =
 
 {{{
