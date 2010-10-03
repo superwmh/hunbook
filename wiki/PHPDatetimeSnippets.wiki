@@ -6,6 +6,28 @@
 date_default_timezone_set('Asia/Taipei');
 }}}
 
+= getdate — Get date/time information =
+{{{
+$today = getdate();
+print_r($today);
+/*
+Array
+(
+    [seconds] => 40
+    [minutes] => 58
+    [hours]   => 21
+    [mday]    => 17
+    [wday]    => 2
+    [mon]     => 6
+    [year]    => 2003
+    [yday]    => 167
+    [weekday] => Tuesday
+    [month]   => June
+    [0]       => 1055901520
+)
+*/
+}}}
+
 = strtotime =
 
 {{{
