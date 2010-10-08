@@ -138,3 +138,17 @@ usermod -G apache wmh
 {{{
 chown apache:apache * -R
 }}}
+
+= unixbench = 
+
+{{{
+wget http://byte-unixbench.googlecode.com/files/unixbench-5.1.2.tar.gz
+tar xzf unixbench-5.1.2.tar.gz
+cd unixbench-5.1.2
+
+yum -y install gcc gcc-c autoconf gcc-c++ time
+
+sed -i "s/GRAPHIC_TESTS = defined/#GRAPHIC_TESTS = defined/g" ./Makefile
+make
+./Run
+}}}
