@@ -361,6 +361,78 @@ highlight TabLineFill ctermbg=green
 highlight TabLineSel ctermbg=red
 }}}
 
+= .bashrc =
+
+{{{
+export PATH=/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/hunter_wu/bin:/usr/sbin:
+umask 022
+
+# screen setting
+if [ "x$WINDOW" == "x" ]; then
+  if [ "x$YROOT_NAME" == "x" ]; then
+    PS1="\e[30;1m\u@\h\e[0m\e[36;1m[\w]\e[0m\e[33;1m\#\e[0m > "
+  else
+    PS1="\e[30;1m\u@\h:$YROOT_NAME\e[36;1m[\w]\e[33;1m\#\e[0m > "
+  fi  
+else
+  if [ "x$YROOT_NAME" == "x" ]; then
+    PS1="\e[30;1m[w$WINDOW]\e[34m\u@\h\e[0m\e[36;1m[\w]\e[31;1m#\# \e[30;1m>\e[0m "
+  else
+    PS1="\e[30;1m\u@\h:$YROOT_NAME\e[0m\e[32;1m[\w]\e[0m\e[32;1m[W$WINDOW]\e[0m\e[33;1m\#\e[0m> "
+  fi  
+fi
+
+# man page color setting
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# set screen name
+ScreenName="\[\033k\H:\w\033\134\]"
+
+# misc
+export LANG=zh_TW.UTF-8
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# set alias
+alias ll="ls -la"
+alias dblogin="mysql -u root -{{PASSWORD_HERE}}"
+alias gowww="cd /home/dev/$USER/www" 
+alias gogo='cd /home/dev/hunter_wu/'
+alias goconf='cd /etc/httpd/conf.d';
+alias gogit='cd /var/cache/git/';
+alias gotrac='cd /var/www/trac';
+alias reload="source ~/.bashrc";
+alias addtracuser="sudo /usr/bin/htpasswd /etc/httpd/dav_git.passwd "
+alias goconf='cd /etc/httpd/conf.d/'
+alias restart='sudo /etc/init.d/httpd restart'
+alias adduser="sudo adduser "
+alias gitci="git commit -a "
+
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+echo "Initialising new SSH agent..."
+/usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+echo succeeded
+chmod 600 "${SSH_ENV}"
+. "${SSH_ENV}" > /dev/null
+/usr/bin/ssh-add;
+}
+
+if [ -f "${SSH_ENV}" ]; then
+. "${SSH_ENV}" > /dev/null
+ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+start_agent;
+}
+else
+start_agent;
+fi
+}}}
 
 = My VPS Installation =
 
