@@ -20,3 +20,15 @@ var router = Y.RouterAPI();
 // 正確
 var router = new Y.RouterAPI();
 }}}
+
+= tips =
+
+== Async get script ==
+
+{{{
+Y.Get.script(url, {
+  attributes : {
+    async: "true"
+  }
+});
+}}}
