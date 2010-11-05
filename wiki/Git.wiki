@@ -57,3 +57,19 @@ git diff yourfile
  * .git/info/exclude
  * .git/config - core.excludesfile
  * .gitignore
+
+= tag =
+
+{{{
+# 建立簡短的縮寫
+git tag v20100930 61755a574a29175283b118ea2d3d39bc2852f449
+
+# 刪除
+git tag -d v20100930
+
+# 另一種建立 tag 的方式
+git tag -a v20100930 -m "Alpha launch"
+
+# push all tags
+git push --tags
+}}}
