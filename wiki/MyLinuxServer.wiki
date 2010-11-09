@@ -152,3 +152,10 @@ sed -i "s/GRAPHIC_TESTS = defined/#GRAPHIC_TESTS = defined/g" ./Makefile
 make
 ./Run
 }}}
+
+= python 2.6 =
+
+{{{
+su -c 'rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm'
+yum install python26
+}}}
