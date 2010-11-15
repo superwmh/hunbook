@@ -159,3 +159,168 @@ make
 su -c 'rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm'
 yum install python26
 }}}
+
+= wcadmin =
+
+{{{
+service httpd status
+uname -a
+service httpd status
+service httpd restart
+service mysql status
+yum install fetchmail wget bzip2 unzip zip nmap openssl lynx fileutils ncftp gcc gcc-c++
+yum install mysql mysql-devel mysql-server
+chkconfig --levels 235 mysqld on
+/etc/init.d/mysqld start
+yum install php php-devel php-gd php-imap php-ldap php-mysql php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick libxml2 libxml2-devel
+nano -w /etc/httpd/conf/httpd.conf
+service httpd restart
+chkconfig --levels 235 httpd on
+
+cd /etc/ssh
+nano -w sshd_config
+service sshd reload
+
+nano -w /etc/motd
+perl -MCPAN -e shell
+cd /usr/local/src/
+wget http://www.configserver.com/free/csf.tgz
+tar -xvzf csf.tgz
+cd csf
+./install.directadmin.sh
+nano -w /etc/csf/csf.conf
+service csf restart
+cd /usr/local/src
+wget http://downloads.sourceforge.net/rkhunter/rkhunter-1.3.6.tar.gz
+tar -xvzf rkhunter-1.3.6.tar.gz
+cd rkhunter*
+./installer.sh --layout /usr/local --install
+rkhunter -c -sk
+cd /usr/local/src
+wget ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz
+tar -xvzf chkrootkit.tar.gz
+cd chkrootkit*
+make sense
+./chkrootkit
+cd /usr/local/src
+wget http://www.rfxnetworks.com/downloads/prm-current.tar.gz
+tar -xvzf prm-current.tar.gz
+cd prm*
+./install.sh
+cd /usr/local/src
+wget http://www.r-fx.ca/downloads/spri-current.tar.gz
+tar -xvzf spri-current.tar.gz
+cd spri*
+./install.sh
+cd /usr/local/src
+wget http://www.r-fx.ca/downloads/sim-current.tar.gz
+tar -xvzf sim-current.tar.gz
+cd sim*
+./setup -q
+cd /usr/local/src
+wget http://www.r-fx.ca/downloads/lsm-current.tar.gz
+tar -xvzf lsm-current.tar.gz
+cd lsm*
+./install.sh
+cd /usr/local/src
+wget http://www.rfxn.com/downloads/maldetect-current.tar.gz
+tar -xvzf maldetect-current.tar.gz
+cd mal*
+./install.sh
+nohup maldet -a &
+nano -w /etc/my.cnf
+nano -w /etc/httpd/conf/extra/httpd-default.conf
+nano -w /etc/httpd/conf/extra/httpd-mpm.conf
+service httpd restart
+mv /etc/sysctl.conf /etc/sysctl.conf.bak
+nano -w /etc/sysctl.conf 
+/sbin/sysctl -p
+mv /etc/host.conf /etc/host.back
+echo "# Lookup names via DNS first then fall back to /etc/hosts." > /etc/host.conf
+echo "order bind,hosts" >> /etc/host.conf
+echo "# We have machines with multiple IP addresses." >> /etc/host.conf
+echo "multi on" >> /etc/host.conf
+echo "# Check for IP address spoofing." >> /etc/host.conf
+echo "nospoof on" >> /etc/host.conf
+chmod 0750 `which curl` 2>&-; chmod 0750 `which fetch` 2>&-; chmod 0750 `which wget` 2>&-
+nano -w /etc/named.conf
+cd /usr/local/src
+wget http://www.webbycart.com/hardtmp.sh
+sh hardtmp.sh
+nano -w /etc/fstab
+mount -o remount /dev/shm
+adduser -g wheel wcadmin
+passwd wcadmin
+nano -w /etc/ssh/sshd_config
+service sshd reload
+nano -w /usr/local/lib/php.ini
+service httpd restart
+php -i | grep php.ini
+nano -w /etc/php.ini
+nano -w /etc/httpd/conf/extra/httpd-default.conf
+nano -w /etc/php.ini
+service httpd restart
+nano -w /etc/httpd/conf/extra/httpd-default.conf
+service rpcidmapd stop
+chkconfig rpcidmapd off
+chkconfig --del rpcidmapd
+service anacron stop
+chkconfig anacron off
+chkconfig --del anacron
+service nfslock stop
+chkconfig nfslock off
+service cups stop
+chkconfig cups off
+service bluetooth stop
+chkconfig bluetooth off
+service avahi-daemon stop
+chkconfig avahi-daemon off
+service hidd stop
+chkconfig hidd off
+service pcscd stop
+chkconfig pcscd off
+service gpm stop
+chkconfig gpm off
+service xfs stop
+chkconfig xfs off
+service atd stop
+chkconfig atd off
+nano -w /etc/exim.conf
+nano -w /etc/dovecot.conf
+mkdir /usr/local/updatescript
+cd /usr/local/updatescript
+wget http://tools.web4host.net/update.script
+chmod 755 update.script
+./update.script MODsecurity2Apache2
+./update.script MODsecurity2Apache2Rules
+cd /usr/local/updatescript
+./update.script MODevasiveApache2
+cd /usr/local/src
+wget http://jaist.dl.sourceforge.net/sourceforge/nagiosplug/nagios-plugins-1.4.11.tar.gz
+tar -xvzf nagios-plugins-1.4.11.tar.gz
+cd nagios-plugins-1.4.11
+./configure --prefix=/usr/local/nagios
+make
+make install
+cd /usr/local/src/
+wget http://nchc.dl.sourceforge.net/sourceforge/nagios/nrpe-2.12.tar.gz
+tar -xvzf nrpe-2.12.tar.gz
+cd nrpe-2.12
+./configure 
+make all
+cp src/nrpe /usr/local/nagios/libexec/
+cp src/check_nrpe /usr/local/nagios/libexec/
+cp sample-config/nrpe.cfg /usr/local/nagios/libexec/
+adduser nagios
+chown -R nagios.nagios /usr/local/nagios/
+echo "command[check_disk]=/usr/local/nagios/libexec/check_disk -w 20% -c 10%" >> /usr/local/nagios/libexec/nrpe.cfg
+echo "command[check_swap]=/usr/local/nagios/libexec/check_swap -w 20% -c 10%" >> /usr/local/nagios/libexec/nrpe.cfg
+echo "command[check_mysql]=/usr/local/nagios/libexec/check_mysql" >> /usr/local/nagios/libexec/nrpe.cfg
+echo "command[check_pop3]=/usr/local/nagios/libexec/check_pop -H localhost -p 110" >> /usr/local/nagios/libexec/nrpe.cfg
+echo "command[check_smtp]=/usr/local/nagios/libexec/check_smtp -H localhost -p 25" >> /usr/local/nagios/libexec/nrpe.cfg
+nano -w /etc/services
+nano -w /etc/xinetd.d/nrpe
+echo "208.101.58.42:allow" >> /etc/hosts.allow
+yum -y install xinetd
+/etc/init.d/xinetd restart
+}}}
