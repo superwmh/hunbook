@@ -474,4 +474,9 @@ date.timezone = Asia/Taipei
 
 vim /etc/php.d/json.ini
 extension=json.so
+
+yum install ntp
+/usr/sbin/ntpdate tock.stdtime.gov.tw
+crontab -e
+10 5 * * * /usr/sbin/ntpdate tock.stdtime.gov.tw && /sbin/hwclock -w
 }}}
