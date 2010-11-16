@@ -160,6 +160,14 @@ su -c 'rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5
 yum install python26
 }}}
 
+= php oauth =
+
+{{{
+yum install php-devel
+yum install libcurl-devel
+pecl install oauth-0.99.9
+}}}
+
 = wcadmin =
 
 {{{
