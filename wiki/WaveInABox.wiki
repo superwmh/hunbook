@@ -16,7 +16,8 @@ set HTTP_SERVER_PUBLIC_ADDRESS=h.com:9898
 set HTTP_SERVER_ADDRESSES=%HTTP_SERVER_PUBLIC_ADDRESS%
 
 REM The version of Wave in a Box, extracted from the build.properties file
-set WAVEINABOX_VERSION=`grep ^waveinabox.version= build.properties | cut -f2 -d=`
+REM set WAVEINABOX_VERSION=`grep ^waveinabox.version= build.properties | cut -f2 -d=`
+set WAVEINABOX_VERSION=0.3
 
 REM Disabled federation, as promised.
 set ENABLE_FEDERATION=false
