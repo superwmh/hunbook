@@ -1,5 +1,11 @@
 #summary My Reading Notes
 
+= MIT Media Lab =
+
+ * Publish or Perish
+ * Demo or Die
+
+
 = The Idea Factory =
 
 P28. If you don't do well on either, well, there's always business school.
