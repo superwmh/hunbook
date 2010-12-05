@@ -25,7 +25,7 @@
  * P92. The MIT motto is "Mens et Manus" - "Mind and Hand."
 
  * P96. 
-{{{
+
 "They're bright young people, but there are many demands on their time and it might impede their progress on the research," he said.
 
 "Do you mean to tell us that the people you're producing for us won't be able to write a brief paragraph once a month saying what they've accomplished and where they're headed?" Sharma retorted.
@@ -33,7 +33,6 @@
 Professor Heywood hedged without flinching. He was still in control, the quintessential grantsman. "Perhaps the reports could be prepared every two months," he said. He knew that he would have to review them, that his secretary would have to type them, that he might have to meet with the whole group just to discuss that one subject. It could easily kill a morning that would be better spent writing his book.
 
 "Every two months would be fine with me," Sharma said, and the others agreed.
-}}}
 
  * P97. ... the MIT professor goal - getting tenure and starting a multimillion-dollar company.
 
