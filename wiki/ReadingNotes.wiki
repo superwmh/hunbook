@@ -8,22 +8,38 @@
 
 = The Idea Factory =
 
-P28. If you don't do well on either, well, there's always business school.
+ * P28. If you don't do well on either, well, there's always business school.
 
-P39. I'm a very busy man, and if you are not prepared and you do not have your questions formulated, please do not come here again.
+ * P39. I'm a very busy man, and if you are not prepared and you do not have your questions formulated, please do not come here again.
 
-p51. I wanted to go somewhere that was more merit-oriented. Besides, you look at Harvard, it's the fruit of industry. MIT is industry.
+ * p51. I wanted to go somewhere that was more merit-oriented. Besides, you look at Harvard, it's the fruit of industry. MIT is industry.
 
-P59. Getting an education at MIT is like getting a drink of water from a fire hose.
+ * P59. Getting an education at MIT is like getting a drink of water from a fire hose.
 
-P62. When you work on energy, pretend you're running a mining operation. Focus your effects on finding and extracting the most out of the concentrated areas of what you're mining. Don't worry about recovering anything from the slag heap. You'll spend more time and energy than you'll ever get out of it.
+ * P62. When you work on energy, pretend you're running a mining operation. Focus your effects on finding and extracting the most out of the concentrated areas of what you're mining. Don't worry about recovering anything from the slag heap. You'll spend more time and energy than you'll ever get out of it.
 
-p79. The first rule is "It's your job and not mine." The second is "I don't take any excuses,"...
+ * p79. The first rule is "It's your job and not mine." The second is "I don't take any excuses,"...
 
-P85. If you don't know what you're doing, the first thing to do is to try to look like you know what you're doing. That buys you time.
+ * P85. If you don't know what you're doing, the first thing to do is to try to look like you know what you're doing. That buys you time.
 
-P92. The MIT motto is "Mens et Manus" - "Mind and Hand."
+ * P92. The MIT motto is "Mens et Manus" - "Mind and Hand."
 
+ * P96. 
+{{{
+"They're bright young people, but there are many demands on their time and it might impede their progress on the research," he said.
+
+"Do you mean to tell us that the people you're producing for us won't be able to write a brief paragraph once a month saying what they've accomplished and where they're headed?" Sharma retorted.
+
+Professor Heywood hedged without flinching. He was still in control, the quintessential grantsman. "Perhaps the reports could be prepared every two months," he said. He knew that he would have to review them, that his secretary would have to type them, that he might have to meet with the whole group just to discuss that one subject. It could easily kill a morning that would be better spent writing his book.
+
+"Every two months would be fine with me," Sharma said, and the others agreed.
+}}}
+
+ * P97. ... the MIT professor goal - getting tenure and starting a multimillion-dollar company.
+
+ * P97. To hyperarchieve you have to be hyperorganized.
+
+ * P118. It's just one of the principles of good engineering - redundant systems.
 
 = 畢業設計只要做 1 次 =
 
