@@ -62,7 +62,8 @@
 == replace ==
 
 ||*`V`*||visual line mode||
-||*`:s/{find_str}/{replace_str}`*||search and replace in selected text||
+||*`:s/{find_str}/{replace_str}`*||search and replace in current line||
+||*`:%s/{find_str}/{replace_str}`*||search and replace in all line||
 
 == tab view ==
 
