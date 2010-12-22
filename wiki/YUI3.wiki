@@ -32,3 +32,7 @@ Y.Get.script(url, {
   }
 });
 }}}
+
+= 地雷 =
+
+ * Y.each 在 YUI 3.0.0 的版本不會忽略 null
