@@ -1,5 +1,14 @@
 #summary Avatar
 
+= Facebook =
+
+{{{
+http://graph.facebook.com/hunter.wu/picture
+http://graph.facebook.com/hunter.wu/picture?type=square (default)
+http://graph.facebook.com/hunter.wu/picture?type=small (50)
+http://graph.facebook.com/hunter.wu/picture?type=large (200)
+}}}
+
 = Gravatar =
 
 {{{
