@@ -14,7 +14,7 @@ http://www.example1.com/abc/def?q1=abc&q2=def
 
 === 一般情況 ===
 
-不論是在 PATH_INFO 或 QUERY_STRING，要正確傳入特定字元，只需針對各個值進行 encode 一次即可
+不論是在 `PATH_INFO` 或 `QUERY_STRING`，要正確傳入特定字元，只需針對各個值進行 encode 一次即可
 {{{
 http://www.example1.com/abc/def?q1=abc&q2=def
                         ^^^ ^^^    ^^^    ^^^ 需 encode 的部份
