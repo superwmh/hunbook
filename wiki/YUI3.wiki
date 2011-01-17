@@ -1,5 +1,25 @@
 #summary YUI3 Notes
 
+= Snippets =
+
+== jQuery in YUI ==
+{{{
+YUI({
+    modules: {
+       jquery: {
+           fullpath: 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+       }
+    }
+
+}).use('jquery', function(Y) {
+
+  $(function() {
+    $('#demo').append('<div class="jq">jQuery !!!</div>');
+  });
+
+});
+}}}
+
 = mistakes =
 
 == new object instance ==
