@@ -119,4 +119,26 @@ RewriteEngine On
 RewriteCond $1 !^(index\.php|robots\.txt|swf|images|css|js)
 RewriteRule ^(.*)$ index.php/$1 [L]
 Options All -Indexes
+
+= Patches =
+
+== SQL_CALC_FOUND_ROWS ==
+
+ * DB_active_rec.php
+{{{
+//Line 31:
+var $ar_sql_calc_found_rows	= array();
+}}}
+
+//Line 1781:
+if ($this->ar_sql_calc_found_rows) {
+    $sql .= "SQL_CALC_FOUND_ROWS ";
+}
+
+//Line 2144:
+function sql_calc_found_rows($val = TRUE)
+{
+    $this->ar_sql_calc_found_rows = (is_bool($val)) ? $val : TRUE;
+    return $this;
+}
 }}}
