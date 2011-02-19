@@ -119,6 +119,7 @@ RewriteEngine On
 RewriteCond $1 !^(index\.php|robots\.txt|swf|images|css|js)
 RewriteRule ^(.*)$ index.php/$1 [L]
 Options All -Indexes
+}}}
 
 = Patches =
 
@@ -128,7 +129,6 @@ Options All -Indexes
 {{{
 //Line 31:
 var $ar_sql_calc_found_rows	= array();
-}}}
 
 //Line 1781:
 if ($this->ar_sql_calc_found_rows) {
