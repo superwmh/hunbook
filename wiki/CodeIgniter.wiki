@@ -128,14 +128,17 @@ Options All -Indexes
  * DB_active_rec.php
 {{{
 //Line 31:
-var $ar_sql_calc_found_rows	= array();
+var $ar_sql_calc_found_rows	= FALSE;
 
 //Line 1781:
 if ($this->ar_sql_calc_found_rows) {
     $sql .= "SQL_CALC_FOUND_ROWS ";
 }
 
-//Line 2144:
+//Line 2114:
+'ar_sql_calc_found_rows' => FALSE,
+
+//Line 2145:
 function sql_calc_found_rows($val = TRUE)
 {
     $this->ar_sql_calc_found_rows = (is_bool($val)) ? $val : TRUE;
