@@ -57,4 +57,4 @@ Y.Get.script(url, {
 
  * Y.each 在 YUI 3.0.0 的版本不會忽略 null
  * 在 iframe 內用 onreadystatechange 模擬 DOMReady，但是 crossdomain 的情況可能產生問題，導致 event 未被 trigger 
- * 若 include widget-base-ie.js 且用 YUI.use 用 * 載入，則反而會造成其他瀏覽器的錯誤
+ * 若 include widget-base-ie.js 且用 YUI.use 用 '''*''' 載入，則反而會造成其他瀏覽器的錯誤
