@@ -145,3 +145,8 @@ function sql_calc_found_rows($val = TRUE)
     return $this;
 }
 }}}
+
+
+= 缺點 =
+ * DB Library 設計不良，取出大量 result set 時速度慢且浪費記憶體
+ * Controller 和 Model 命名不可相同，否則會相衝！
