@@ -20,6 +20,109 @@ YUI({
 });
 }}}
 
+== widget ==
+{{{
+/*global YUI */
+
+/**
+ * <p>Makes a container scrollable using either mouse wheel or up/down button.</p>
+ *
+ * @module scroller
+ * @class Scroller
+ * @requires dom, node, event
+ */
+YUI.add("scroller", function (Y) {
+
+    var A,
+        B,
+        CONST,
+        getClassName = Y.ClassNameManager.getClassName;
+
+    /**
+     * Constant used to refer something
+     *
+     * @property CONST
+     * @static
+     * @type String
+     */
+    CONST = {
+        A   : "aaa",
+        B   : "bbb"
+    };
+
+    /**
+     * <p>Makes a container scrollable using either mouse wheel or up/down button.</p>
+     *
+     * @constructor
+     * @class Scroller
+     * @param {Object} attrs Object liternal containing configuration parameters.
+     */
+    function Scroller(config) {
+        Scroller.superclass.constructor.apply(this, arguments);
+    }
+
+    Scroller.NAME = "scroller";
+    Scroller.NS   = "scroller";
+
+    /**
+     * Static property used to define the default attribute
+     * configuration for the Scroller.
+     *
+     * @property Scroller.ATTRS
+     * @type Object
+     * @static
+     */
+    Scroller.ATTRS = {
+
+        /**
+        * Indicating the current mode of the scroller.
+        *
+        * @attribute mode
+        * @type String
+        */
+        mode : {
+            value : CONST.A
+        }
+
+    };
+
+    Y.extend(Scroller, Y.Widget, {
+
+        initializer: function (config) {
+        },
+        destructor : function () {
+        },
+
+        /**
+         * Rendering mini unit to the layout.
+         *
+         * This method is called by framework.
+         *
+         * @method renderUI
+         * @protected
+         */
+        renderUI : function () {
+        },
+        /**
+         * Binding event handlers to the layout elements.
+         *
+         * This method is called by framework.
+         *
+         * @method bindUI
+         * @protected
+         */
+        bindUI : function () {
+        },
+        syncUI : function () {
+        }
+
+    });
+
+    Y.Scroller = Scroller;
+
+}, "1.0.0", {requires: ["dom", "node", "event"], optional: ["anim"]});
+}}}
+
 = mistakes =
 
 == new object instance ==
