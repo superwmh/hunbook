@@ -1,5 +1,5 @@
 #summary YUI3 Notes
-
+<wiki:toc />
 = Snippets =
 
 == jQuery in YUI ==
