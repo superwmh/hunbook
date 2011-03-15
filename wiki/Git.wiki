@@ -82,5 +82,5 @@ git push augmentum master
 
 {{{
 # 改 origin
-git remote set-url origin git@dev.hunbook.com:hunbook.git
+git remote set-url origin git@dev.example.com:hunbook.git
 }}}
