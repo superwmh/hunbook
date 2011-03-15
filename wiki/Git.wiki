@@ -79,3 +79,8 @@ git push --tags
 git remote add augmentum w3.aug.com:lib.git
 git push augmentum master
 }}}
+
+{{{
+# 改 origin
+git remote set-url origin git@dev.hunbook.com:hunbook.git
+}}}
