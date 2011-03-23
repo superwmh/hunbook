@@ -27,6 +27,7 @@
 
 ||*`[C]`*||change to the end of the line||
 ||*`u`*||undo||
+||*`D`*||delete from current char to the end||
 ||*`dw`*||delete word from current char to the end||
 ||*`diw`*||delete whole word||
 ||*`di>`*||delete whole string inside <>||
