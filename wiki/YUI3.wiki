@@ -162,3 +162,6 @@ Y.Get.script(url, {
  * 在 iframe 內用 `onreadystatechange` 模擬 `DOMReady`，但是 crossdomain 的情況可能產生問題，導致 event 未被 trigger 
  * 若 include `widget-base-ie.js` 且用 `YUI.use` 用 `*` 載入，則反而會造成其他瀏覽器的錯誤
  * YUI 3.3.0 新增的 `show()`/`hide()` 只會針對 inline display style 去判斷，不實用！ 
+ * YUI 3.2 grids
+  * 用百分比算格子寬度的方式，在不同瀏覽器會有不同結果（進位方式不同）
+  * 在 IE7，float 物件的 margin 可能會消失
