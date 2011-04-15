@@ -164,4 +164,4 @@ Y.Get.script(url, {
  * YUI 3.3.0 新增的 `show()`/`hide()` 只會針對 inline display style 去判斷，不實用！ 
  * YUI 3.2 grids
   * 用百分比算格子寬度的方式，在不同瀏覽器會有不同結果（進位方式不同）
-  * 在 IE7，float 物件的 margin 可能會消失
+  * 在 IE7，resize layout 寬度時，裡面 float 物件的 margin 可能會消失
