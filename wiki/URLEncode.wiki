@@ -43,7 +43,7 @@ http://api.example1.com/index.php/service/device/da/HD_98ST001/Photos/travel/%23
 }}}
 
 但以上是未使用 url rewrite 的情況，使用了 url rewrite，則 `#` 字號在 `PATH_INFO` 的地方，會被還原一次，
-因此針對 `PATH_INFO` 必須 encode 兩次 (也可以只針對 `PATH_INFO` 內的 `#` 字號 encode 兩次，其他字元似乎沒有影響)
+因此針對 `PATH_INFO` 必須 encode 兩次 (也可以只針對 `PATH_INFO` 內的 `#` 和 %` 兩個符號 encode 兩次，其他字元似乎沒有影響)
 
 {{{
 http://api.example1.com/service/device/da/HD_98ST001/Photos/travel/#01?tok=abcdefg
