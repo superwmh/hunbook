@@ -8,6 +8,12 @@
 var $save_queries        = FALSE;  //預設值改為 FALSE，避免大量 query 時浪費記憶體
 }}}
 
+== query string ==
+
+{{{
+// 這樣設置就不會限制 query 一定要兩個參數
+$config['uri_protocol']	= "PATH_INFO";
+}}}
 
 = Snippets =
 
