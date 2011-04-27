@@ -332,3 +332,20 @@ echo "208.101.58.42:allow" >> /etc/hosts.allow
 yum -y install xinetd
 /etc/init.d/xinetd restart
 }}}
+
+= backup_daily.sh =
+
+{{{
+export MYAPP="helloworld"
+cd /var/www/html/labs/backup
+mysqldump -u -p ${MYAPP} -e > ${MYAPP}_`date +%d`.sql
+gzip ${MYAPP}_`date +%d`.sql -f
+python26 ~/gsutil/gsutil cp ${MYAPP}_`date +%d`.sql.gz gs://bak/
+cd /var/www/html/labs/Dropbox-0.4.0
+php daily_backup.php
+rm /var/www/html/labs/backup/${MYAPP}_`date -d yesterday +%d`.sql.gz
+cd /var/www/html
+tar jcvf ${MYAPP}.tar.bz2 ${MYAPP}/
+python26 ~/gsutil/gsutil cp ${MYAPP}.tar.bz2 gs://bak/
+mv ${MYAPP}.tar.bz2 /var/www/html/labs/backup/
+}}}
