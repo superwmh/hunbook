@@ -164,7 +164,10 @@ yum install python26
 
 {{{
 yum install php-devel
-yum install libcurl-devel
+
+#yum install libcurl-devel
+yum install curl-devel
+
 pecl install oauth-0.99.9
 }}}
 
