@@ -66,6 +66,19 @@ ErrorLog logs/error_log
 #</Directory>
 }}}
 
+= apache2 compression mod_deflate =
+
+{{{
+<IfModule mod_deflate.c>
+    # compress content with type html, text, and css
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/x-javascript
+    <IfModule mod_headers.c>
+        # properly handle requests coming from behind proxies
+        Header append Vary User-Agent
+    </IfModule>
+</IfModule>
+}}}
+
 = my.cnf =
 
 {{{
