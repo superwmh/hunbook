@@ -66,7 +66,8 @@ ErrorLog logs/error_log
 #</Directory>
 }}}
 
-= apache2 compression mod_deflate =
+= apache2 =
+== mod_deflate ==
 
 {{{
 <IfModule mod_deflate.c>
@@ -76,6 +77,18 @@ ErrorLog logs/error_log
         # properly handle requests coming from behind proxies
         Header append Vary User-Agent
     </IfModule>
+</IfModule>
+}}}
+
+== mod_expires ==
+
+{{{
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType image/jpg "access 10 years"
+    ExpiresByType image/gif "access 10 years"
+    ExpiresByType image/png "access 10 years"
+    ExpiresDefault "access 30 minutes"
 </IfModule>
 }}}
 
