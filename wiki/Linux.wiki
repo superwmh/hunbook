@@ -186,6 +186,13 @@ title CentOS (2.6.18-53.1.19.el5PAE)
   initrd /initrd-2.6.18-53.1.19.el5PAE.img
 }}}
 
+== ssh ==
+
+{{{
+cd "c:\Program Files\Oracle\VirtualBox"
+VBoxManage modifyvm CentOS --natpf1 "guestsshh,tcp,,2424,,22"
+}}}
+
 = .screenrc =
 
 {{{
