@@ -198,6 +198,14 @@ VBoxManage modifyvm CentOS --natpf1 "guestsshh,tcp,,2424,,22"
 {{{
 Website Name: mirror.centos.org
 CentOS Directory: centos/5.6/os/i386
+
+// mirrors
+//http://mirror01.idc.hinet.net/CentOS/5.6/os/i386/
+//http://ftp.stu.edu.tw/Linux/CentOS/5.6/os/i386/
+//http://ftp.tc.edu.tw/Linux/CentOS/5.6/os/i386/
+//http://ftp.twaren.net/Linux/CentOS/5.6/os/i386/
+//http://ftp.isu.edu.tw/pub/Linux/CentOS/5.6/os/i386/
+//http://ftp.cse.yzu.edu.tw/pub/CentOS/5.6/os/i386/
 }}}
 
 = .screenrc =
