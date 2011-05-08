@@ -193,6 +193,13 @@ cd "c:\Program Files\Oracle\VirtualBox"
 VBoxManage modifyvm CentOS --natpf1 "guestsshh,tcp,,2424,,22"
 }}}
 
+== HTTP Setup ==
+
+{{{
+Website Name: mirror.centos.org
+CentOS Directory: centos/5.6/os/i386
+}}}
+
 = .screenrc =
 
 {{{
