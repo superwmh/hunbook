@@ -44,6 +44,19 @@ git merge testing
 
 # delete
 git branch -d testing
+
+# undoing merge
+git reset --hard ORIG_HEAD
+}}}
+
+= patch = 
+
+{{{
+#http://www.cloudspace.com/blog/2010/07/14/patching-with-git-format-patch-and-git-am/
+
+git format-patch -1 953b9be
+
+git am -s 0001-my-fix.patch
 }}}
 
 = diff =
