@@ -93,3 +93,14 @@
 ||*`:set nonu`*||set no number||
 ||*`:set nu`*||set number on||
 ||*`:set paste`*||set paste mode||
+
+== make ==
+
+{{{
+yum install ncurses-devel -y
+yum install libselinux-devel -y
+hg clone https://vim.googlecode.com/hg/ vim
+cd vim/src
+./configure --with-features=big
+make
+}}}
