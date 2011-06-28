@@ -143,7 +143,7 @@ git log --pretty=format:"%ai %h %an, %s"
  * %Cgreen: switch color to green
  * %Cblue: switch color to blue
  * %Creset: reset color
- * %C(…): color specification, as described in color.branch.* config option
+ * %C(…): color specification, as described in color.branch.
  * %m: left, right or boundary mark
  * %n: newline
  * %%: a raw %
