@@ -59,6 +59,12 @@ function wbr(str, num) {
 
 = 字串 byte 長度 =
 
+== UTF-8 版 ==
+{{{
+encodeURIComponent("Hello, 中文").replace(/%[A-F\d]{2}/g, 'U').length;
+}}}
+
+== BIG5 版==
 {{{
 //string.Blength() 傳回字串的byte長度    
 String.prototype.Blength = function() {    
