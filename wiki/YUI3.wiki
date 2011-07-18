@@ -168,7 +168,7 @@ Y.Get.script(url, {
 
 = Fixes =
 == YUI 3.2.0 == 
-=== YUI.use("*") + getComputedStyle issue in IE ===
+=== `YUI.use("*")` + getComputedStyle issue in IE ===
 {{{
     /**
      * Returns the computed style for the given node.
