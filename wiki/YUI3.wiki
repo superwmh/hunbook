@@ -165,3 +165,27 @@ Y.Get.script(url, {
  * YUI 3.2 grids
   * 用百分比算格子寬度的方式，在不同瀏覽器會有不同結果（進位方式不同）
   * 在 IE7，resize layout 寬度時，裡面 float 物件的 margin 可能會消失
+
+= Fixes =
+== YUI 3.2.0 == 
+=== YUI.use("*") + getComputedStyle issue in IE ===
+{{{
+    /**
+     * Returns the computed style for the given node.
+     * @method getComputedStyle
+     * @param {HTMLElement} An HTMLElement to get the style from.
+     * @param {String} att The style property to get.
+     * @return {String} The computed value of the style property.
+     */
+    getComputedStyle: function(node, att) {
+        var val = '',
+            doc = node[OWNER_DOCUMENT];
+
+        if (node[STYLE] && doc[DEFAULT_VIEW] && doc[DEFAULT_VIEW][GET_COMPUTED_STYLE]) {
+            val = doc[DEFAULT_VIEW][GET_COMPUTED_STYLE](node, null)[att];
+        } else if (Y.DOM[GET_COMPUTED_STYLE]) {
+            val = Y.DOM[GET_COMPUTED_STYLE](node, att);
+        }
+        return val;
+    }
+}}}
