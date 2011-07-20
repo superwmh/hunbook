@@ -189,3 +189,16 @@ Y.Get.script(url, {
         return val;
     }
 }}}
+
+
+= 十個不要用 YUI 的理由 =
+ * 用 YUI 沒有比較快
+ * 用 YUI 都在幫 YUI 解 bug
+ * YUI 沒什麼人在用
+ * 4
+ * 5
+ * 6
+ * 7
+ * 8
+ * 9
+ * 10
