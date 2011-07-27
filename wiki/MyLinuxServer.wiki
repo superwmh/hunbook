@@ -381,3 +381,41 @@ tar jcvf ${MYAPP}.tar.bz2 ${MYAPP}/
 python26 ~/gsutil/gsutil cp ${MYAPP}.tar.bz2 gs://bak/
 mv ${MYAPP}.tar.bz2 /var/www/html/labs/backup/
 }}}
+
+= My VPS Installation =
+
+{{{
+tzselect
+5
+43
+1
+yum update tzdata -y
+rm /etc/localtime -f
+cp -a /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
+yum install screen -y
+wget http://jsgears.googlecode.com/svn/trunk/settings/.screenrc
+wget http://jsgears.googlecode.com/svn/trunk/settings/.vimrc
+mkdir .ssh
+cd .ssh
+wget http://jsgears.googlecode.com/svn/trunk/settings/.ssh/authorized_keys
+
+yum install php -y
+yum install php-pear -y
+yum install php-mbstring -y
+yum update curl -y
+yum install gcc -y
+pecl channel-update pear.php.net
+pecl install json
+
+vim /etc/php.ini
+date.timezone = Asia/Taipei
+
+vim /etc/php.d/json.ini
+extension=json.so
+
+yum install ntp -y
+/usr/sbin/ntpdate tock.stdtime.gov.tw
+crontab -e
+10 5 * * * /usr/sbin/ntpdate tock.stdtime.gov.tw && /sbin/hwclock -w
+}}}
