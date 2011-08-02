@@ -10,6 +10,13 @@
 	email = hunter.wu@gmail.com
 }}}
 
+= clone =
+
+{{{
+# error: SSL certificate problem, verify that the CA cert is OK.
+$ export GIT_SSL_NO_VERIFY=true 
+}}}
+
 
 = commit =
 
