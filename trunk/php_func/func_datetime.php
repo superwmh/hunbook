@@ -17,7 +17,7 @@ function strtots($str, $from_timezone) {
     if ((int)$h === 12) {
         $ts -= 12*60*60;
     }
-    if ($p === "下午") {
+    if ($p === "下午" || $p === "PM") {
         $ts += 12*60*60;
     }
     return $ts;
@@ -66,5 +66,40 @@ function get_duration_desc($duration) {
   }
 }
 
+//取得完整的時間間隔描述
+function get_full_duration_desc($duration) {
+    $periods = array(
+        array(60 * 60 * 24, '天'),
+        array(60 * 60,      '小時'),
+        array(60,           '分'),
+        array(1,            '秒'),
+    );
+    $rtn = '';
+    foreach ($periods as $period) {
+        list($p, $desc) = $period;
+        if ($duration > $p) {
+            $units = floor($duration / $p);
+            $duration -= $units * $p;
+            if ($rtn !== '') {
+                $rtn .= ' ';
+            }
+            $rtn .= $units . $desc;
+        }
+    }
+    return $rtn;
+}
+
+//取得當天零時 ts
+function get_today_ts() {
+    return mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+}
+
+//取得週日的 timestamp
+function get_sunday_timestamp($ts = 0) {
+    if ($ts == 0) $ts = time();
+    $weekday = date('w', $ts);
+    $sunday_ts = mktime(0, 0, 0, date('m', $ts), date('d', $ts), date('Y', $ts)) - 86400 * $weekday;
+    return $sunday_ts;
+}
 
 ?>
