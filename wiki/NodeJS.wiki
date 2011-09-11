@@ -1,0 +1,12 @@
+#summary Node.JS
+
+= Installation =
+
+{{{
+cp /usr/bin/python26 /usr/bin/python
+wget http://nodejs.org/dist/v0.5.6/node-v0.5.6.tar.gz
+tar zxvf node-v0.5.6.tar.gz
+cd node-v0.5.6
+./configure
+make
+}}}
