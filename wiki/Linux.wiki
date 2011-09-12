@@ -190,7 +190,8 @@ title CentOS (2.6.18-53.1.19.el5PAE)
 
 {{{
 cd "c:\Program Files\Oracle\VirtualBox"
-VBoxManage modifyvm CentOS --natpf1 "guestsshh,tcp,,2424,,22"
+VBoxManage modifyvm CentOS --natpf1 "guestssh,tcp,,2424,,22"
+VBoxManage modifyvm CentOS --natpf2 "guesthttp,tcp,,8001,,80"
 }}}
 
 == HTTP Setup ==
