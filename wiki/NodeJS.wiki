@@ -3,10 +3,26 @@
 = Installation =
 
 {{{
+# need python 2.6
 cp /usr/bin/python26 /usr/bin/python
 wget http://nodejs.org/dist/v0.5.6/node-v0.5.6.tar.gz
 tar zxvf node-v0.5.6.tar.gz
 cd node-v0.5.6
 ./configure
 make
+make install
+}}}
+
+{{{
+wget http://nodejs.org/dist/v0.5.6/node-v0.5.6.tar.gz
+tar zxvf tar-1.26.tar.gz
+cd tar-1.26
+./configure
+make
+make install
+}}}
+
+{{{
+# need latest tar
+npm install socket.io
 }}}
