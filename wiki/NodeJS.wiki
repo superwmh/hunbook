@@ -3,20 +3,26 @@
 = Installation =
 
 {{{
-# need python 2.6
-cp /usr/bin/python26 /usr/bin/python
-wget http://nodejs.org/dist/v0.5.6/node-v0.5.6.tar.gz
-tar zxvf node-v0.5.6.tar.gz
-cd node-v0.5.6
+// node.js stable
+http://nodejs.org/dist/node-v0.4.11.tar.gz
+tar zxvf node-v0.4.11.tar.gz
+cd node-v0.4.11
 ./configure
 make
 make install
 }}}
 
 {{{
-wget http://nodejs.org/dist/v0.5.6/node-v0.5.6.tar.gz
+// npm
+// ref: http://clonn.blogspot.com/2011/01/nodejs-npm.html
+curl http://npmjs.org/install.sh | sh
+}}}
+
+{{{
+wget ftp://ftp.gnu.org/gnu/tar/tar-1.26.tar.gz
 tar zxvf tar-1.26.tar.gz
 cd tar-1.26
+export FORCE_UNSAFE_CONFIGURE=1
 ./configure
 make
 make install
