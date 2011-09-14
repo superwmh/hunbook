@@ -37,6 +37,7 @@ npm install socket.io
 
 Refs:
  * http://socketio-example.nodester.com/
+ * http://www.danielbaulig.de/socket-ioexpress/
 
 == Simple Example ==
 
