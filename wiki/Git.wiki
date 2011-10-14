@@ -54,6 +54,10 @@ git branch -d testing
 
 # undoing merge
 git reset --hard ORIG_HEAD
+
+# track
+git fetch origin
+git branch --track 20111030_space_urlencode origin/20111030_space_urlencode
 }}}
 
 = patch = 
