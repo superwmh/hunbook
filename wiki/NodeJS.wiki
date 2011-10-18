@@ -33,6 +33,10 @@ make install
 npm install socket.io
 }}}
 
+{{{
+npm install mongodb
+}}}
+
 = Socket.io Examples =
 
 Refs:
