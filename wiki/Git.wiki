@@ -55,9 +55,15 @@ git branch -d testing
 # undoing merge
 git reset --hard ORIG_HEAD
 
+
+# create
+git fetch origin
+git branch --track 20111130_space_music_share
+git checkout 20111130_space_music_share
+
 # track
 git fetch origin
-git branch --track 20111030_space_urlencode origin/20111030_space_urlencode
+git branch --track 20111030_space_urlencode
 }}}
 
 = patch = 
