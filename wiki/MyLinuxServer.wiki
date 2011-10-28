@@ -92,7 +92,23 @@ ErrorLog logs/error_log
 </IfModule>
 }}}
 
-= my.cnf =
+= mysql =
+
+{{{
+/usr/bin/mysqladmin -u root password 'new-password'
+/usr/bin/mysqladmin -u root -h p password 'new-password'
+/usr/bin/mysql_secure_installation
+}}}
+
+{{{
+mysqltuner.pl
+http://blog.mysqltuner.com/download/
+
+tuningprimer.sh
+http://www.day32.com/MySQL/tuning-primer.sh
+}}}
+
+== my.cnf ==
 
 {{{
 [mysqld]
@@ -143,13 +159,6 @@ max_connect_errors = 1844674407370954751
 connect_timeout = 20
 skip-name-resolve
 slave_net_timeout = 30
-}}}
-= mysql =
-
-{{{
-/usr/bin/mysqladmin -u root password 'new-password'
-/usr/bin/mysqladmin -u root -h p password 'new-password'
-/usr/bin/mysql_secure_installation
 }}}
 
 
