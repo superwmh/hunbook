@@ -186,7 +186,7 @@ apc.stat=0
 #cp APC-3.1.9/apc.php /var/www/html/......
 }}}
 
-= oauth =
+== oauth ==
 
 {{{
 yum install php-devel
