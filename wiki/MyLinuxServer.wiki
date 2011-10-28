@@ -1,5 +1,7 @@
 #summary Log
 
+<wiki:toc>
+
 = packages =
 
 {{{
@@ -7,7 +9,9 @@ yum install mysql-server
 yum install php-mysql
 }}}
 
-= highperformance.conf =
+= apache2 =
+
+== highperformance.conf ==
 
 {{{
 Listen 80
@@ -66,7 +70,6 @@ ErrorLog logs/error_log
 #</Directory>
 }}}
 
-= apache2 =
 == mod_deflate ==
 
 {{{
@@ -162,6 +165,38 @@ slave_net_timeout = 30
 }}}
 
 
+= php =
+
+== apc ==
+
+{{{
+yum install pcre-devel -y
+
+pecl install apc
+#Enable spin locks (EXPERIMENTAL) [no] : yes
+#Enable pthread mutexes (default) [yes] : no
+
+vim /etc/php.d/apc.ini
+extension=apc.so
+apc.stat=0
+#apc.shm_size=64
+
+#wget http://pecl.php.net/get/APC
+#tar zxvf APC
+#cp APC-3.1.9/apc.php /var/www/html/......
+}}}
+
+= oauth =
+
+{{{
+yum install php-devel
+
+#yum install libcurl-devel
+yum install curl-devel
+
+pecl install oauth-0.99.9
+}}}
+
 = user/group =
 
 {{{
@@ -196,17 +231,6 @@ yum install python26
 
 wget -q http://peak.telecommunity.com/dist/ez_setup.py
 python26 ez_setup.py
-}}}
-
-= php oauth =
-
-{{{
-yum install php-devel
-
-#yum install libcurl-devel
-yum install curl-devel
-
-pecl install oauth-0.99.9
 }}}
 
 = wcadmin =
