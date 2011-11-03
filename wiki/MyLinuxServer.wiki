@@ -117,39 +117,42 @@ http://www.day32.com/MySQL/tuning-primer.sh
 [mysqld]
 datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
+user=mysql
 # Default to using old password format for compatibility with mysql 3.x
 # clients (those using the mysqlclient10 compatibility package).
-old_passwords=1
-skip-locking
-#skip-networking
-safe-show-database
-query_cache_limit=1M
-query_cache_size=64M ## 32MB for every 1GB of RAM
-query_cache_type=1
-max_user_connections=200
-max_connections=500
-interactive_timeout=10
-wait_timeout=20
-connect_timeout=20
-thread_cache_size=128
-key_buffer=128M ## 64MB for every 1GB of RAM
-join_buffer=1M
-max_connect_errors=20
-max_allowed_packet=16M
-table_cache=1024
-record_buffer=1M
-sort_buffer_size=2M ## 1MB for every 1GB of RAM
-read_buffer_size=2M ## 1MB for every 1GB of RAM
-read_rnd_buffer_size=2M  ## 1MB for every 1GB of RAM
-thread_concurrency=8 ## Number of CPUs x 2
-myisam_sort_buffer_size=64M
-server-id=1
-log_slow_queries=/var/log/mysql-slow-queries.log
-long_query_time=2
+#old_passwords=0
 
-[mysql.server]
-user=mysql
-basedir=/var/lib
+# Disabling symbolic-links is recommended to prevent assorted security risks;
+# to do so, uncomment this line:
+# symbolic-links=0
+
+default-character-set = utf8
+character-set-server = utf8
+collation-server = utf8_general_ci
+init_connect = 'SET collation_connection = utf8_general_ci'
+init_connect = 'SET NAMES utf8'
+
+skip-innodb
+skip-bdb
+skip-networking
+skip-locking
+connect_timeout=15
+key_buffer=16M          ## 64MB for every 1GB of RAM
+join_buffer=1M
+record_buffer=1M
+sort_buffer=2M          ## 1MB for every 1GB of RAM
+table_cache=4096
+open_files_limit=8196
+thread_cache_size=286
+max_allowed_packet=5M
+wait_timeout=15
+query_cache_limit=1M
+query_cache_size=256M   ## 32MB for every 1GB of RAM
+query_cache_type=1
+thread_concurrency=4    ## Number of CPUs x 2
+local-infile=0
+max_connections=200
+
 
 [mysqld_safe]
 log-error=/var/log/mysqld.log
@@ -179,6 +182,7 @@ pecl install apc
 vim /etc/php.d/apc.ini
 extension=apc.so
 apc.stat=0
+apc.ttl=86400
 #apc.shm_size=64
 
 #wget http://pecl.php.net/get/APC
