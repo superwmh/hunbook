@@ -1,5 +1,39 @@
 #summary PHP String Snippets
 
+= my_json_encode =
+
+{{{
+//my JSON_UNESCAPED_UNICODE implementation of json_encode
+function my_json_encode($var) {
+    if (!is_array($var)) {
+        //return '"'. str_replace(array('"', '\\', '/'), array('\"', '\\\\', '\\/'), $var) . '"';   // PHP compatible
+        return '"'. str_replace(array('"', '\\'), array('\"', '\\\\'), $var) . '"';                 // YUI compatible
+    }
+    if (is_assoc($var)) {
+        $rtn = "";
+        foreach ($var as $k => $v) {
+            if ($rtn !== "") {
+                $rtn .= ",";
+            }
+            $rtn .= '"' . $k . '":' . my_json_encode($v);
+        }
+        return '{' . $rtn . '}';
+    } else {
+        $rtn = "";
+        foreach ($var as $v) {
+            if ($rtn !== "") {
+                $rtn .= ",";
+            }
+            $rtn .= my_json_encode($v);
+        }
+        return '[' . $rtn . ']';
+    }
+}
+function is_assoc($arr) {
+    return (is_array($arr) && count(array_filter(array_keys($arr),'is_string')) == count($arr));
+}
+}}}
+
 = utf-8 to big5 entity =
 
 {{{
