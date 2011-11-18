@@ -64,6 +64,13 @@ git checkout 20111130_space_music_share
 # track
 git fetch origin
 git branch --track 20111030_space_urlencode
+
+# delete
+git push origin :refs/heads/20111030_space_urlencode
+git branch -d 20111030_space_urlencode
+
+# prune
+git remote prune origin
 }}}
 
 = patch = 
