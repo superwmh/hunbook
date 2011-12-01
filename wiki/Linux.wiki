@@ -58,6 +58,18 @@ xrandr
 xrandr -s 1024x760
 }}}
 
+= Google Chrome =
+
+{{{
+vim /etc/yum.repos.d/google.repo
+
+[Google]
+name=Google Chrome (i386)
+baseurl=http://dl.google.com/linux/rpm/stable/i386
+enable=1
+gpgcheck=1
+gpgkey=http://dl-ssl.google.com/linux/linux_signing_key.pup
+}}}
 
 = YUM =
 
