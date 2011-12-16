@@ -1,5 +1,9 @@
 #summary Git
 
+= git branching model =
+
+[http://commondatastorage.googleapis.com/0000/muchiii/git-flow-20111215.png]
+
 = .git/config =
 
 {{{
