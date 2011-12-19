@@ -37,6 +37,10 @@ npm install socket.io
 npm install mongodb
 }}}
 
+refs:
+ * http://clonn.blogspot.com/2011/01/nodejs-npm.html
+ * http://xfalcons.blogspot.com/2011/12/nodejs-npm-forever-nodejs.html
+
 = Socket.io Examples =
 
 Refs:
