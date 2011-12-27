@@ -9,7 +9,7 @@ console.log(p.test(s));
 console.log(p.test(s));
 console.log(p.test(s));
 }}}
- 这个正则设置了g标志，会影响lastIndex属性，第二个test是从*后面开始，所以会是false,然后lastIndex设置为0,下一个就是true,然后false....
+ 这个正则设置了g标志，会影响lastIndex属性，第二个test是从`*`后面开始，所以会是false,然后lastIndex设置为0,下一个就是true,然后false....
 
  !RegExpObject.lastIndex 该属性存放一个整数，它存储的是上一次匹配文本之后的第一个字符的位置。   
     
