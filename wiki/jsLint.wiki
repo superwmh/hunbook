@@ -41,7 +41,7 @@ function run(a) {
     }
     if (!JSLINT(input, {'continue': true, eqeq: false, node: true, nomen: true,
             vars: false, plusplus: true, regexp: true, rhino: true,
-            sloppy: true, undef: true, white: true})) {
+            sloppy: true, undef: false, white: true})) {
         for (i = 0; i < JSLINT.errors.length; i += 1) {
             e = JSLINT.errors[i];
             if (e) {
