@@ -59,6 +59,11 @@ git branch -d testing
 # undoing merge
 git reset --hard ORIG_HEAD
 
+# undoing commits
+git reset 7654321
+git checkout -f
+git reset origin master
+git push
 
 # create
 git fetch origin
