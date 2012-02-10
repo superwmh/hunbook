@@ -67,12 +67,13 @@ git push
 
 # create
 git fetch origin
-git branch --track 20111130_space_music_share
-git checkout 20111130_space_music_share
+git branch --track the_branch_name origin/the_branch_name
+git checkout the_branch_name
 
 # track
 git fetch origin
-git branch --track 20111030_space_urlencode
+git branch --set-upstream the_branch_name origin/the_branch_name
+git checkout the_branch_name
 
 # delete
 git push origin :refs/heads/20111030_space_urlencode
@@ -181,5 +182,5 @@ git log --pretty=format:"%ai %h %an, %s"
  * %n: newline
  * %%: a raw %
  * %x00: print a byte from a hex code
- * %w([<w>[,<i1>[,<i2>]]]): switch line wrapping, like the -w option of git-shortlog
+ * `%w([<w>[,<i1>[,<i2>]]])`: switch line wrapping, like the -w option of git-shortlog
 ref: http://www.kernel.org/pub/software/scm/git/docs/git-log.html#_pretty_formats
