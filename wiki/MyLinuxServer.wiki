@@ -210,6 +210,7 @@ yum --enablerepo=webtatic install php-pecl-apc
 yum --enablerepo=webtatic install perl-Net-OAuth
 php -v
 }}}
+*TODO:* 檢查 php.ini 設定
 
 = user/group =
 
