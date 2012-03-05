@@ -1,6 +1,5 @@
 #summary PHP Settings
 
-
  * date.timezone 沒有設定時，可能造成 date() 算錯，可 check 以下兩個值：
 {{{
 echo date('Y-m-d H:i:s', 653410800), "\n"; //1990-09-15 23:00:00
@@ -13,6 +12,12 @@ echo date('Y-m-d H:i:s', 653410799), "\n"; //1990-09-15 22:59:59
 date.timezone = Asia/Taipei
 }}}
 
+ * Production errors
+{{{
+error_reporting  =  E_ALL & ~E_NOTICE
+display_errors = Off
+error_log = /path/to/log_file
+}}}
 
  * 虛擬主機的時區設定不符合需求，可用以下取代：
 {{{
