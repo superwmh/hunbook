@@ -14,9 +14,10 @@ date.timezone = Asia/Taipei
 
  * Production errors
 {{{
-error_reporting  =  E_ALL & ~E_NOTICE
 display_errors = Off
+error_reporting  =  E_ALL & ~E_NOTICE
 error_log = /path/to/log_file
+; ignore_repeated_errors = On
 }}}
 
  * 虛擬主機的時區設定不符合需求，可用以下取代：
