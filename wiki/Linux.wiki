@@ -9,11 +9,15 @@ lsb_release -a
 = 幾個看狀態的指令 = 
 
 {{{
+cat /etc/issue     ; OS version
+cat /proc/cpuinfo  ; CPU
+cat /proc/version  ; Linux kernel
 hostname
-tail -24 /proc/cpuinfo
 free
 df -h
 uptime
+uname -a           ; Linux info
+dmesg
 }}}
 
 = suders =
