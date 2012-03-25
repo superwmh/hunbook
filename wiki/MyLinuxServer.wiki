@@ -2,13 +2,6 @@
 
 <wiki:toc>
 
-= packages =
-
-{{{
-yum install mysql-server
-yum install php-mysql
-}}}
-
 = apache2 =
 
 == highperformance.conf ==
@@ -448,6 +441,8 @@ mkdir .ssh
 cd .ssh
 wget http://jsgears.googlecode.com/svn/trunk/settings/.ssh/authorized_keys
 
+yum install mysql-server -y
+yum install php-mysql -y
 yum install php -y
 yum install php-pear -y
 yum install php-mbstring -y
