@@ -163,6 +163,12 @@ slave_net_timeout = 30
 
 = php =
 
+
+== extensions ==
+{{{
+/usr/lib64/php/modules/
+}}}
+
 == apc ==
 
 {{{
