@@ -200,13 +200,17 @@ yum install curl-devel
 pecl install oauth-0.99.9
 }}}
 
-== 5.3 on CentOS ==
+== 5.3.10 on CentOS ==
 refs: http://www.webtatic.com/packages/php53/
 {{{
 rpm -Uvh http://repo.webtatic.com/yum/centos/5/latest.rpm
 yum --enablerepo=webtatic install php
+yum --enablerepo=webtatic install php-pear
 yum --enablerepo=webtatic install php-pecl-apc
-yum --enablerepo=webtatic install perl-Net-OAuth
+#yum --enablerepo=webtatic install perl-Net-OAuth
+
+pecl install oauth
+
 php -v
 }}}
 *TODO:* 檢查 php.ini 設定
