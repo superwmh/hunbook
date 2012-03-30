@@ -471,4 +471,6 @@ yum install ntp -y
 /usr/sbin/ntpdate tock.stdtime.gov.tw
 crontab -e
 10 5 * * * /usr/sbin/ntpdate tock.stdtime.gov.tw && /sbin/hwclock -w
+
+yum install p7zip -y
 }}}
