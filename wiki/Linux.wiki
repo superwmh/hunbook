@@ -501,6 +501,6 @@ fi
 == 中文輸入 ==
 {{{
 yum install "@Chinese Support"
-}}
+}}}
 
 System -> Preferences -> Input Method
