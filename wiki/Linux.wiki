@@ -1,3 +1,5 @@
+<wiki:toc max_depth="2" />
+
 #summary Something about Linux
 
 = 查 distribution 版本 =
