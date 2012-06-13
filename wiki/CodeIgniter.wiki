@@ -44,6 +44,12 @@ $this->db->save_queries = FALSE;
 $this->db->insert_id();      //新增的 id
 $this->db->affected_rows();
 $this->db->last_query();     //save_queries = TRUE 才有用
+
+//runtime 改設定
+$this->db = $this->load->database('default', TRUE); // load 進來
+$this->db->database = "production_db";  // 改設定
+$this->db->conn_id = NULL;              // 清掉 connect id
+$this->db->initialize();                // 重新 connect
 }}}
 
 == config ==
