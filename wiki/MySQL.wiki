@@ -1,0 +1,16 @@
+#summary MySQL skills
+
+
+= Maintenance =
+
+== Find and Optimize Fragmented Tables ==
+
+{{{
+SELECT TABLE_NAME,Data_free
+  FROM information_schema.TABLES
+ WHERE TABLE_SCHEMA NOT IN ('information_schema','mysql')
+  AND Data_free > 0;
+}}}
+{{{
+OPTIMIZE TABLE %TABLENAME%
+}}}
