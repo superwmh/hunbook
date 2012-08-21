@@ -38,3 +38,7 @@ extension=php_exif.dll
 ; Always populate the $HTTP_RAW_POST_DATA variable.
 always_populate_raw_post_data = On
 }}}
+{{{
+// 這樣也可以
+file_get_contents("php://input");
+}}}
