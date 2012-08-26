@@ -14,3 +14,13 @@ SELECT TABLE_NAME,Data_free
 {{{
 OPTIMIZE TABLE %TABLENAME%
 }}}
+
+
+= mysqlcheck =
+
+{{{
+mysqlcheck -r your_database
+}}}
+{{{
+mysqlcheck -o your_database
+}}}
