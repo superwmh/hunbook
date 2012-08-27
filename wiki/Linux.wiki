@@ -504,3 +504,13 @@ yum install "@Chinese Support"
 }}}
 
 System -> Preferences -> Input Method
+
+= Applications =
+
+== memcache ==
+
+{{{
+/usr/bin/memcached-tool 127.0.0.1:11211 stats
+/usr/bin/memcached-tool 127.0.0.1:11211 display
+/usr/bin/memcached-tool 127.0.0.1:11211 dump
+}}}
