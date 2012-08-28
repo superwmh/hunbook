@@ -78,5 +78,5 @@ SSLCertificateKeyFile "/PathTo/Apache2.2/conf/h.com.server.key"
 
 == Refs ==
 
-* https://www.ssllabs.com/ssltest/analyze.html
-* http://linuxwindowsmaster.com/how-to-disable-the-support-for-sslv2-low-encryption-ciphers/
+ * https://www.ssllabs.com/ssltest/analyze.html
+ * http://linuxwindowsmaster.com/how-to-disable-the-support-for-sslv2-low-encryption-ciphers/
