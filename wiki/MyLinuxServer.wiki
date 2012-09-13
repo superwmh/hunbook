@@ -203,6 +203,11 @@ pecl install oauth-0.99.9
 == 5.3.10 on CentOS ==
 
 refs. 1: http://iuscommunity.org/Docs/GettingStarted/
+{{{
+yum list installed php*
+yum erase php php-cli php-common ...
+yum install php54
+}}}
 
 refs. 2: http://www.webtatic.com/packages/php53/
 {{{
