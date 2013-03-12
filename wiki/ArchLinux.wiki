@@ -4,4 +4,17 @@
 
 {{{
 sudo pacman -Syy
+sudo packer {keyword}
+}}}
+
+= 1 =
+
+{{{
+systemctl status mysql
+systemctl start mysql
+systemctl enable mysql
+}}}
+
+{{{
+sudo yaourt ...
 }}}
