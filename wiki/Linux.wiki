@@ -507,3 +507,13 @@ System -> Preferences -> Input Method
 /usr/bin/memcached-tool 127.0.0.1:11211 display
 /usr/bin/memcached-tool 127.0.0.1:11211 dump
 }}}
+
+
+= Gentoo =
+
+== 改 ip ==
+
+{{{
+vim /etc/conf.d/network (or net, ethx)
+/etc/init.d/network restart
+}}}
