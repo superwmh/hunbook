@@ -197,6 +197,7 @@ EndSection
 
 == console resolution ==
 Edit `/etc/grub.conf`, Add `vga=791`
+(ArchLinux: /boot/grub/grub.conf)
 
 {{{
 title CentOS (2.6.18-53.1.19.el5PAE)
