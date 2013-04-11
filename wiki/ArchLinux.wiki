@@ -18,3 +18,9 @@ systemctl enable mysql
 {{{
 sudo yaourt ...
 }}}
+
+{{{
+/etc/systemd/system/multi-user.target.wants/httpd.service
+
+PrivateTmp=false
+}}}
