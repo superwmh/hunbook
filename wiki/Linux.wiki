@@ -518,3 +518,14 @@ System -> Preferences -> Input Method
 vim /etc/conf.d/network (or net, ethx)
 /etc/init.d/network restart
 }}}
+
+= dm-crypt =
+
+{{{
+fdisk -l /dev/sdc
+cfdisk /dev/sdc
+cryptsetup -y create myEncFS /dev/sdc1
+dmsetup ls
+mkfs -t ext4 /dev/mapper/myEncFS
+mount /dev/mapper/myEncFS /mnt/secure_hd
+}}}
