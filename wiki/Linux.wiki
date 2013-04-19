@@ -519,7 +519,15 @@ vim /etc/conf.d/network (or net, ethx)
 /etc/init.d/network restart
 }}}
 
-== 改 ip ==
+== 開機啟動 ==
+
+`rc-update`
+
+{{{
+/etc/local.d/*.start
+}}}
+
+- or -
 
 {{{
 vi /etc/init.d/rc.local
