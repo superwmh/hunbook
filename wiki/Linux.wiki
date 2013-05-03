@@ -196,6 +196,22 @@ EndSection
 }}}
 
 == console resolution ==
+
+=== ubuntu ===
+
+{{{
+as root edit /etc/default/grub uncomment the GRUB_GFXMODE=640x480
+and change the resolution to something you can use e.g. 1024x768
+
+edit /etc/grub.d/00_header search for: set gfxmode=${GRUB_GFXMODE}
+on the next line insert: set gfxpayload=keep verify that the new line
+is before insmod gfxterm
+
+run update-grub
+run reboot
+}}}
+
+=== CentOS ===
 Edit `/etc/grub.conf`, Add `vga=791`
 (ArchLinux: /boot/grub/grub.conf)
 
