@@ -1,0 +1,72 @@
+#summary Trying pcntl_fork
+
+= Grand Child =
+
+{{{
+<?php
+/*
+    Father
+     +-- Child
+          +-- Grand-child
+*/
+function log2($msg) {
+    echo date("Y-m-d H:i:s ") . getmypid() .' '. $msg . "\n";
+}
+log2("This is the script start.");
+
+$cpid = pcntl_fork();
+log2("Forking...");
+if ($cpid == -1) {
+    die('error: unable to fork.');
+
+} else if ($cpid) {
+    log2($cpid . ':father process...');
+
+} else {
+    sleep(1);
+    log2($cpid . ':child process...');
+
+    $gcpid = pcntl_fork();
+    log2("Forking again...");
+    if ($gcpid == -1) {
+        die('error: unable to fork.');
+    } else if ($gcpid) {
+        log2($gcpid . ':child process...');
+    } else {
+        log2($gcpid . ':grand-child process...');
+    }
+}
+log2("This is the script end.");
+}}}
+
+= Two Children =
+
+{{{
+<?php
+/*
+    Father
+     +-- Child
+     +-- Child
+*/
+function log2($msg) {
+    echo date("Y-m-d H:i:s ") . getmypid() .' '. $msg . "\n";
+}
+log2("This is the script start.");
+
+$cpid2 = 0;
+$cpid1 = pcntl_fork();
+if ($cpid1) $cpid2 = pcntl_fork();
+log2("Forking...");
+
+if ($cpid1 == -1) {
+    die('error: unable to fork.');
+
+} else if ($cpid1 && $cpid2) {
+    log2($cpid1 .' '. $cpid2 . ':father process...');
+
+} else {
+    log2($cpid1 .' '. $cpid2 . ':child process...');
+
+}
+log2("This is the script end.");
+}}}
