@@ -115,3 +115,42 @@ if ($cpid == -1) {
 log2("This is the script end.");
 
 }}}
+
+= Multiple Children =
+
+{{{
+<?php
+/*
+   Multiple Child Process
+*/
+function log2($msg) {
+    echo date("Y-m-d H:i:s ") . getmypid() .' '. $msg . "\n";
+}
+log2("This is the script start.");
+
+$cnt = 0;
+$max = 3;
+
+while (1) {
+    $cnt++;
+    $cpid = pcntl_fork();
+    log2("Forking...");
+
+    if ($cpid == -1) {
+        die('error: unable to fork.');
+
+    } else if ($cpid) {
+        if ($cnt >= $max) {
+            pcntl_wait($status);
+            log2('Got child status: '. $status);
+            $cnt--;
+        }
+    } else {
+        $s = mt_rand(9, 19);
+        log2('Child process...('. getmypid() .', '. $s .' sec)');
+        sleep($s);
+        log2('Child finish ('. getmypid() .', '. $s .' sec)');
+        exit;
+    }
+}
+}}}
