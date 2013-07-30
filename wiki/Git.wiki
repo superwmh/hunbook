@@ -66,6 +66,7 @@ git reset origin master
 git push
 
 # create
+git push origin master:refs/heads/the_branch_name
 git fetch origin
 git branch --track the_branch_name origin/the_branch_name
 git checkout the_branch_name
