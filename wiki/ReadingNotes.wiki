@@ -1,5 +1,9 @@
 #summary My Reading Notes
 
+= 淘寶技術這十年 =
+
+ * P27. 任何牛B的人物，都有一段苦B的經歷。
+
 = MIT Media Lab =
 
  * Publish or Perish
