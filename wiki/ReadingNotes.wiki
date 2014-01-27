@@ -4,6 +4,8 @@
 
  * P27. 任何牛B的人物，都有一段苦B的經歷。
 
+ * P29. 任何牛B的人物，都必須有一段苦B的經歷。
+
 = MIT Media Lab =
 
  * Publish or Perish
