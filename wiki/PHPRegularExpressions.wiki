@@ -34,7 +34,7 @@ if (preg_match($regex, $dailybugle)) {
 $date = "12/30/1969";
 $p = "!^(\\d\\d)[-/](\\d\\d)[-/](\\d\\d(?:\\d\\d)?)$!";
  
-if (preg_match($p,$date,$matches) {
+if (preg_match($p, $date, $matches)) {
   $month = $matches[1];
   $day = $matches[2];
   $year = $matches[3];
